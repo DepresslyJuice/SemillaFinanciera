@@ -1,7 +1,9 @@
+import '../css/header.css';
+
 function Header() {
     return (
-        <header style={{ backgroundColor: '#27ae60', padding: '1rem', color: 'white' }}>
-            <h1 style={{ margin: 0 }}>Semilla Financiera</h1>
+        <header className="header-modern">
+            <h1>Semilla Financiera</h1>
         </header>
     );
 }
