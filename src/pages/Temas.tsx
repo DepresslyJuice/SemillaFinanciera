@@ -39,7 +39,7 @@ function Temas() {
                                 <li>Inversiones</li>
                                 <li>Fondos de emergencia</li>
                             </ul>
-                            <Link to="/temas/tipos-de-ahorro" className="tema-link">
+                            <Link to="/temas/metodos" className="tema-link">
                                 Ver más <span className="arrow">→</span>
                             </Link>
                         </div>

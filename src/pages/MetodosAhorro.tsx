@@ -1,67 +1,150 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "../css/MetodosAhorro.css";
+
 
 function MetodosAhorro() {
+    const [metodoSeleccionado, setMetodoSeleccionado] = useState<number | null>(null);
+    // Bloquear el scroll cuando el modal está abierto
+    useEffect(() => {
+        const prevButton = document.querySelector('.swiper-button-prev');
+        const nextButton = document.querySelector('.swiper-button-next');
+
+        const handlePrev = () => {
+            const swiperElement = document.querySelector('.metodos-swiper');
+            if (swiperElement && (swiperElement as any).swiper) {
+                (swiperElement as any).swiper.slidePrev();
+            }
+        };
+
+        const handleNext = () => {
+            const swiperElement = document.querySelector('.metodos-swiper');
+            if (swiperElement && (swiperElement as any).swiper) {
+                (swiperElement as any).swiper.slideNext();
+            }
+        };
+
+        prevButton?.addEventListener('click', handlePrev);
+        nextButton?.addEventListener('click', handleNext);
+
+        return () => {
+            prevButton?.removeEventListener('click', handlePrev);
+            nextButton?.removeEventListener('click', handleNext);
+        };
+    }, []);
+    useEffect(() => {
+        if (metodoSeleccionado !== null) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [metodoSeleccionado]);
+
     const metodos = [
         {
             titulo: "Método 50/30/20",
             descripcionCorta: "50% necesidades, 30% deseos y 20% ahorro y deudas.",
             descripcionLarga:
-                "Este método popular divide tus ingresos después de impuestos en tres categorías: 50% para necesidades esenciales (alquiler, comida, transporte), 30% para deseos (ocio, salir a comer, hobbies) y 20% para ahorro e inversión o pago de deudas. Es una forma sencilla de equilibrar tus gastos y asegurar que una parte de tus ingresos se destine al futuro.",
+                "Este método popular divide tus ingresos después de impuestos en tres categorías: 50% para necesidades esenciales (alquiler, comida, transporte), 30% para deseos (ocio, salir a comer, hobbies) y 20% para ahorro e inversión o pago de deudas.\n\n✅ Ventajas: Fácil de aplicar, ideal para principiantes en finanzas personales.\n⚠️ Desventajas: No considera variaciones de ingresos o gastos extraordinarios.\n💡 Consejo: Automatiza el 20% de ahorro configurando una transferencia automática el día de tu pago.",
+            color: "#4299e1",
+            icono: "💰",
+            bgImage: "linear-gradient(135deg, #a6c0fe 0%, #f68084 100%)"
         },
         {
             titulo: "Método de los sobres",
             descripcionCorta: "Divide tu dinero en sobres/categorías. Cuando se acabe, no gastas más.",
             descripcionLarga:
-                "Ideal para controlar el gasto impulsivo. Asigna una cantidad fija de efectivo a diferentes sobres etiquetados por categoría (comida, entretenimiento, gasolina, etc.). Una vez que el dinero en un sobre se agota, debes dejar de gastar en esa categoría hasta el próximo período presupuestario. Fomenta la conciencia del gasto y evita el uso excesivo de tarjetas.",
+                "Ideal para controlar el gasto impulsivo. Asigna una cantidad fija de efectivo a diferentes sobres etiquetados por categoría (comida, entretenimiento, gasolina, etc.).\n\n✅ Ventajas: Control visual del gasto, disminuye uso de tarjetas de crédito.\n⚠️ Desventajas: Puede ser incómodo manejar efectivo en algunos contextos.\n💡 Consejo: Usa sobres virtuales o apps si prefieres pagar todo de manera digital.",
+            color: "#38b2ac",
+            icono: "✉️",
+            bgImage: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
         },
         {
             titulo: "Método Kakebo",
             descripcionCorta: "Diario japonés de gastos: anota todo lo que ganas y gastas.",
             descripcionLarga:
-                "El Kakebo, o 'libro de cuentas para la economía doméstica', es un método japonés de presupuesto que se centra en la atención plena sobre tus hábitos de gasto. Implica llevar un registro detallado de todos tus ingresos y gastos, categorizándolos y reflexionando sobre tus patrones de gasto para identificar áreas donde puedes ahorrar. Generalmente se divide en cuatro preguntas clave: ¿Cuánto dinero tengo disponible?, ¿Cuánto me gustaría ahorrar?, ¿Cuánto estoy gastando?, ¿Cómo puedo mejorar?",
+                "El Kakebo, o 'libro de cuentas para la economía doméstica', es un método japonés de presupuesto que se centra en la atención plena sobre tus hábitos de gasto.\n\n✅ Ventajas: Promueve la conciencia financiera profunda.\n⚠️ Desventajas: Puede requerir más tiempo y constancia diaria.\n💡 Consejo: Dedica solo 5 minutos al día para registrar tus movimientos y notarás el cambio.",
+            color: "#805ad5",
+            icono: "📝",
+            bgImage: "linear-gradient(135deg, #c471f5 0%, #fa71cd 100%)"
         },
     ];
 
-    const [metodoSeleccionado, setMetodoSeleccionado] = useState(null);
-
-    const handleClickMetodo = (index: number) => {
-        setMetodoSeleccionado(index);
-    };
-
-    const handleCerrarDetalle = () => {
-        setMetodoSeleccionado(null);
-    };
-
     return (
-        <section style={styles.section}>
-            <h2 style={styles.heading}>Métodos de Ahorro</h2>
-            <div style={styles.gridContainer}>
-                {metodos.map((metodo, index) => (
-                    <motion.div
-                        key={index}
-                        whileHover={{ scale: 1.05 }}
-                        onClick={() => handleClickMetodo(index)}
-                        style={styles.metodoCard}
-                    >
-                        <h3 style={styles.metodoTitulo}>{metodo.titulo}</h3>
-                        <p style={styles.metodoDescripcion}>{metodo.descripcionCorta}</p>
-                        <button style={styles.verMasBoton}>Ver más</button>
-                    </motion.div>
-                ))}
+        <section className="section">
+            <h2 className="heading">Métodos de Ahorro</h2>
+            <h3 className="subheading">Desliza</h3>
+            <div className="swiper-container">
+                <Swiper
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    className="metodos-swiper"
+                    pagination={{ clickable: true }}
+                >
+                    {metodos.map((metodo, index) => (
+                        <SwiperSlide key={index} className="swiper-slide-custom">
+                            <div
+                                className="slide-content"
+                                style={{
+                                    background: metodo.bgImage,
+                                }}
+                            >
+                                <div className="slide-inner">
+                                    <div className="slide-icon">{metodo.icono}</div>
+                                    <h3 className="slide-titulo">{metodo.titulo}</h3>
+                                    <p className="slide-descripcion">{metodo.descripcionCorta}</p>
+                                    <button
+                                        className="slide-button"
+                                        onClick={() => setMetodoSeleccionado(index)}
+                                    >
+                                        Ver detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+
+                <div className="swiper-controls">
+                    <button className="swiper-button-prev custom-swiper-button">❮</button>
+                    <button className="swiper-button-next custom-swiper-button">❯</button>
+                </div>
             </div>
 
             {metodoSeleccionado !== null && (
-                <div style={styles.modalOverlay}>
+                <div
+                    className="modal-overlay"
+                    onClick={() => setMetodoSeleccionado(null)}
+                >
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.8 }}
-                        style={styles.modalContent}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className="modal-content"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        <h3 style={styles.modalTitulo}>{metodos[metodoSeleccionado].titulo}</h3>
-                        <p style={styles.modalDescripcion}>{metodos[metodoSeleccionado].descripcionLarga}</p>
-                        <button style={styles.cerrarModalBoton} onClick={handleCerrarDetalle}>
+                        <div
+                            className="modal-header"
+                            style={{ background: metodos[metodoSeleccionado].bgImage }}
+                        >
+                            <span className="modal-icon">{metodos[metodoSeleccionado].icono}</span>
+                            <h3 className="modal-titulo">{metodos[metodoSeleccionado].titulo}</h3>
+                        </div>
+                        <div className="modal-descripcion">
+                            {metodos[metodoSeleccionado].descripcionLarga.split('\n').map((linea, idx) => (
+                                <p key={idx}>{linea}</p>
+                            ))}
+                        </div>
+                        <button
+                            className="cerrar-modal-boton"
+                            onClick={() => setMetodoSeleccionado(null)}
+                        >
                             Cerrar
                         </button>
                     </motion.div>
@@ -70,70 +153,5 @@ function MetodosAhorro() {
         </section>
     );
 }
-
-const styles = {
-    section: { padding: '2rem', backgroundColor: '#f9fafb' },
-    heading: { fontSize: '2rem', marginBottom: '2rem', color: '#2c3e50', textAlign: 'center' },
-    gridContainer: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '1.5rem',
-    },
-    metodoCard: {
-        background: 'white',
-        padding: '1.5rem',
-        borderRadius: '12px',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-        textAlign: 'center',
-        cursor: 'pointer',
-    },
-    metodoTitulo: { color: '#2980b9', marginBottom: '1rem' },
-    metodoDescripcion: { color: '#34495e' },
-    verMasBoton: {
-        marginTop: '1rem',
-        padding: '0.5rem 1rem',
-        borderRadius: '8px',
-        backgroundColor: '#3498db',
-        color: 'white',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '0.9rem',
-    },
-    modalOverlay: {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 10,
-    },
-    modalContent: {
-        background: 'white',
-        padding: '2rem',
-        borderRadius: '12px',
-        boxShadow: '0 8px 20px rgba(0,0,0,0.2)',
-        textAlign: 'left',
-        minWidth: '400px',
-        maxWidth: '80%',
-    },
-    modalTitulo: { color: '#2980b9', marginBottom: '1rem', fontSize: '1.5rem' },
-    modalDescripcion: { color: '#34495e', marginBottom: '1.5rem' },
-    cerrarModalBoton: {
-        padding: '0.75rem 1.5rem',
-        borderRadius: '8px',
-        backgroundColor: '#e74c3c',
-        color: 'white',
-        border: 'none',
-        cursor: 'pointer',
-        fontSize: '1rem',
-        fontWeight: 'bold',
-        transition: 'background-color 0.3s ease',
-        ':hover': { backgroundColor: '#c0392b' },
-    },
-};
 
 export default MetodosAhorro;

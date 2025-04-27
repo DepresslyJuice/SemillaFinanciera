@@ -1,18 +1,424 @@
+:root {
+    --header-bg: linear-gradient(135deg, #053742, #39A2DB);
+    --header-scrolled-bg: #ffffff;
+    --header-text: #ffffff;
+    --header-scrolled-text: #053742;
+    --accent-primary: #A2DBFA;
+    --accent-secondary: #E8F0F2;
+    --button-primary: #39A2DB;
+    --button-hover: #053742;
+}
+
 .header-modern {
-    background-color: #11267c; /* Un azul moderno */
-    padding: 1.5rem 2rem; /* Más espacio interior */
-    color: #fff; /* Texto blanco */
-    display: flex; /* Para alinear elementos fácilmente */
-    align-items: center; /* Centrar verticalmente */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sutil sombra */
-    border-bottom: 3px solid #0e2330; /* Línea inferior destacada */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
-    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 0;
+    z-index: 1000;
+    background: var(--header-bg);
+    transition: all 0.4s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.header-modern.scrolled {
+    padding: 0.8rem 0;
+    background: var(--header-scrolled-bg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    color: var(--header-text);
+    transition: color 0.3s ease;
+}
+
+.logo-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.header-modern.scrolled .logo-icon {
+    color: var(--header-scrolled-text);
 }
 
 .header-modern h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--header-text);
     margin: 0;
-    font-size: 2.2rem; /* Tamaño de fuente más grande */
-    font-weight: 600; /* Texto un poco más grueso */
-    text-align: center;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.header-modern.scrolled h1 {
+    color: var(--header-scrolled-text);
+}
+
+.header-modern h1::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+.logo-container:hover h1::after {
+    width: 100%;
+}
+
+.tagline {
+    position: absolute;
+    bottom: -20px;
+    left: 50px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--accent-secondary);
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.header-modern.scrolled .tagline {
+    color: var(--header-scrolled-text);
+    opacity: 0.6;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    margin: 0 1rem;
+}
+
+.nav-link {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.header-modern.scrolled .nav-link {
+    color: var(--header-scrolled-text);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    color: var(--header-text);
+    cursor: pointer;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+}
+
+.header-modern.scrolled .search-btn {
+    color: var(--header-scrolled-text);
+}
+
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.header-modern.scrolled .search-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cta-button {
+    background-color: var(--button-primary);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--button-hover);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--header-text);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.header-modern.scrolled .menu-toggle span {
+    background-color: var(--header-scrolled-text);
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Floating Elements Animation */
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.floating-coin {
+    position: absolute;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.3);
+    animation: float 6s infinite ease-in-out;
+    z-index: -1;
+}
+
+.header-modern.scrolled .floating-coin {
+    color: rgba(5, 55, 66, 0.1);
+}
+
+.coin-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.coin-2 {
+    top: 65%;
+    left: 30%;
+    animation-delay: 1s;
+    animation-duration: 10s;
+}
+
+.coin-3 {
+    top: 25%;
+    right: 15%;
+    animation-delay: 2s;
+    animation-duration: 9s;
+}
+
+.coin-4 {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 3s;
+    animation-duration: 11s;
+}
+
+.coin-5 {
+    bottom: 15%;
+    left: 5%;
+    animation-delay: 4s;
+    animation-duration: 7s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(10deg);
+    }
+}
+
+/* Coin Animations in Logo */
+.coin {
+    animation: coinDrop 3s infinite;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.coin-slot {
+    animation: coinSlot 3s infinite;
+}
+
+@keyframes coinDrop {
+    0%, 90%, 100% {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    10%, 89% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes coinSlot {
+    0%, 10%, 90%, 100% {
+        opacity: 1;
+    }
+    11%, 89% {
+        opacity: 0.6;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .main-nav {
+        display: none;
+    }
+
+    .main-nav.open {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        padding: 1rem 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+    }
+
+    .header-modern.scrolled .main-nav.open {
+        background: var(--header-scrolled-bg);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 2rem;
+    }
+
+    .main-nav li {
+        margin: 0.8rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .logo-container {
+        flex-grow: 1;
+    }
+
+    .tagline {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 1.5rem;
+    }
+
+    .header-modern h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header-actions .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-actions .search-btn {
+        display: none;
+    }
+
+    .header-modern h1 {
+        font-size: 1.3rem;
+    }
 }

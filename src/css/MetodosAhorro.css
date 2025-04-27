@@ -1,0 +1,318 @@
+    /* Base styling for the section */
+    .section {
+        padding: 3rem 1.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        margin-top: 100px;
+        font-family: 'Poppins', sans-serif;
+        border-radius: 15px;
+    }
+
+    .heading {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: #2d3748;
+        position: relative;
+        font-weight: 700;
+    }
+
+    .heading:after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #4299e1, #805ad5);
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+
+    .subheading{
+        text-align: center;
+    }
+
+    /* Swiper container styling */
+    .swiper-container {
+        position: relative;
+        padding: 2rem 0;
+        overflow: hidden;
+    }
+
+    .metodos-swiper {
+        width: 100%;
+        height: 460px;
+    }
+
+    /* Custom slide styling */
+    .swiper-slide-custom {
+        height: 400px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+
+    .swiper-slide-custom:hover {
+        transform: translateY(-5px);
+    }
+
+    .slide-content {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+    }
+
+    .slide-content:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.15);
+        z-index: 0;
+    }
+
+    .slide-inner {
+        padding: 2rem;
+        text-align: center;
+        z-index: 1;
+        color: white;
+        width: 85%;
+    }
+
+    .slide-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    .slide-titulo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .slide-descripcion {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        font-weight: 400;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .slide-button {
+        background: rgba(255,255,255,0.2);
+        border: 2px solid white;
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+    }
+
+    .slide-button:hover {
+        background: white;
+        color: #4a5568;
+        transform: scale(1.05);
+    }
+
+    /* Navigation buttons */
+    .swiper-controls {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 110%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    .custom-swiper-button {
+        background: rgba(255,255,255,0.7);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #2d3748;
+        cursor: pointer;
+        border: none;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+        pointer-events: auto;
+    }
+
+    .custom-swiper-button:hover {
+        background: white;
+        transform: scale(1.1);
+    }
+
+    /* Pagination styling */
+    :root {
+        --swiper-theme-color: #4299e1;
+        --swiper-pagination-bullet-size: 10px;
+        --swiper-pagination-bullet-inactive-color: #cbd5e0;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        margin-top: 1rem;
+    }
+
+    /* Modal styling */
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.75);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background: white;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    }
+
+    .modal-header {
+        padding: 2rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .modal-header:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.2);
+        z-index: 0;
+    }
+
+    .modal-icon {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-titulo {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-descripcion {
+        padding: 2rem;
+        line-height: 1.7;
+        color: #4a5568;
+        max-height: 50vh;
+        overflow-y: auto;
+    }
+
+    .modal-descripcion p {
+        margin-bottom: 1rem;
+    }
+
+    .cerrar-modal-boton {
+        display: block;
+        width: calc(100% - 4rem);
+        margin: 0 auto 2rem;
+        padding: 1rem;
+        background: linear-gradient(90deg, #4299e1, #805ad5);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .cerrar-modal-boton:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .heading {
+            font-size: 2rem;
+        }
+
+        .metodos-swiper {
+            height: 500px;
+        }
+
+        .swiper-slide-custom {
+            height: 450px;
+        }
+
+        .slide-titulo {
+            font-size: 1.5rem;
+        }
+
+        .custom-swiper-button {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+        }
+    }
+
+    /* Animation for modal appearance */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-overlay {
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    .modal-content {
+        animation: slideUp 0.4s ease forwards;
+    }
