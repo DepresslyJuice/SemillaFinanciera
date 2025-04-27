@@ -1,0 +1,327 @@
+/* Presupuesto.css */
+
+/* Contenedor principal con fondo (similar a .tarjetas-container) */
+.Presupuesto-main {
+    margin-top: 100px; /* Ajusta según necesites para el header */
+    padding: 3rem 1rem;
+    background-color: #f9f9f9; /* Color de fondo sutil */
+    background-image:
+            linear-gradient(45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(-45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #f1f5f9 75%),
+            linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+    background-size: 20px 20px; /* Tamaño del patrón */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente consistente */
+}
+
+/* Sección principal del presupuesto (presupuesto-contain er - asumiendo typo, aplicando a la sección dentro de .Presupuesto-main) */
+.Presupuesto-main section { /* Target section inside .Presupuesto-main to handle the potential typo */
+    max-width: 1200px; /* Ancho máximo similar al ejemplo */
+    margin: 0 auto; /* Centrar */
+    padding: 2.5rem 2rem; /* Padding similar a p-6 (3rem) + 2rem en horizontal */
+    background-color: white; /* bg-white */
+    border-radius: 20px; /* rounded-2xl (32px) - ajustado a 20px para consistencia estética */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* shadow-md */
+    position: relative;
+    overflow: hidden; /* Para contener posibles elementos flotantes o decoraciones */
+}
+
+
+/* Apartado informativo */
+.Presupuesto-main section > div:first-child { /* Target the first div child within the section */
+    background-color: #fff9c4; /* bg-yellow-100 */
+    padding: 1.5rem; /* p-6 (24px) - ajustado ligeramente */
+    border-radius: 15px; /* rounded-2xl (32px) - ajustado a 15px */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    margin-bottom: 2rem; /* mb-8 (32px) - ajustado */
+    border-left: 5px solid #fbc02d; /* Borde de color para destacar */
+}
+
+.Presupuesto-main section > div:first-child h2 {
+    font-size: 2rem; /* text-3xl (30px) - ajustado */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 (16px) */
+    color: #212121;
+}
+
+.Presupuesto-main section > div:first-child p {
+    font-size: 1rem; /* text-lg (18px) - ajustado */
+    margin-bottom: 1rem; /* mb-2 (8px) - ajustado */
+    color: #555;
+    line-height: 1.6;
+}
+
+.Presupuesto-main section > div:first-child ul {
+    list-style: disc; /* list-disc */
+    margin-left: 1.5rem; /* ml-6 (24px) */
+    margin-bottom: 1rem; /* mb-4 (16px) */
+    color: #555;
+}
+
+.Presupuesto-main section > div:first-child ul li {
+    margin-bottom: 0.5rem; /* Espacio entre items de lista */
+}
+
+
+/* Título principal del área de presupuesto */
+.Presupuesto-main section > h2:nth-of-type(1) { /* Target the first h2 after the informative div */
+    font-size: 2rem; /* text-3xl (30px) - ajustado */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem; /* mb-6 (24px) */
+    color: #212121;
+    text-align: center; /* Centrar título */
+}
+
+/* Área de agregar nueva categoría */
+.Presupuesto-main section .flex.mb-6 { /* Target the flex container for input/button */
+    display: flex; /* flex */
+    margin-bottom: 1.5rem; /* mb-6 (24px) */
+    gap: 0; /* Eliminar gap para que el input y el botón se toquen */
+}
+
+.Presupuesto-main section .flex.mb-6 input[type="text"] {
+    flex-grow: 1; /* w-full */
+    border: 1px solid #ccc; /* border */
+    padding: 0.75rem; /* p-2 (8px) - ajustado */
+    border-top-left-radius: 5px; /* rounded-l */
+    border-bottom-left-radius: 5px; /* rounded-l */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none; /* Eliminar outline por defecto */
+    transition: border-color 0.3s ease;
+}
+
+.Presupuesto-main section .flex.mb-6 input[type="text"]:focus {
+    border-color: #00796b; /* Color de borde al enfocar */
+}
+
+.Presupuesto-main section .flex.mb-6 button {
+    background-color: #4CAF50; /* bg-green-500 */
+    color: white; /* text-white */
+    padding: 0.75rem 1.5rem; /* px-4 (16px) - ajustado */
+    border-top-right-radius: 5px; /* rounded-r */
+    border-bottom-right-radius: 5px; /* rounded-r */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* transition */
+}
+
+.Presupuesto-main section .flex.mb-6 button:hover {
+    background-color: #388E3C; /* hover:bg-green-600 */
+}
+
+/* Área de la tabla */
+.Presupuesto-main section .overflow-x-auto { /* overflow-x-auto */
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+    margin-bottom: 2rem; /* mb-8 (32px) */
+}
+
+.Presupuesto-main section table {
+    min-width: 100%; /* min-w-full */
+    background-color: white; /* bg-white */
+    border-radius: 15px; /* rounded-2xl (32px) - ajustado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    border-collapse: collapse; /* Colapsar bordes */
+}
+
+.Presupuesto-main section thead {
+    background-color: #f5f5f5; /* bg-gray-100 */
+}
+
+.Presupuesto-main section th {
+    padding: 1rem; /* p-4 (16px) */
+    text-align: left; /* text-left */
+    font-weight: 600;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+}
+
+.Presupuesto-main section th:last-child {
+    text-align: center; /* text-center para la columna de acciones */
+}
+
+.Presupuesto-main section tbody tr {
+    border-bottom: 1px solid #eee; /* border-b */
+}
+
+.Presupuesto-main section tbody tr:last-child {
+    border-bottom: none; /* Eliminar borde inferior de la última fila */
+}
+
+.Presupuesto-main section td {
+    padding: 1rem; /* p-4 (16px) */
+    color: #555;
+}
+
+.Presupuesto-main section td:last-child {
+    text-align: center; /* text-center para la columna de acciones */
+}
+
+
+.Presupuesto-main section td input[type="number"] {
+    border: 1px solid #ccc; /* border */
+    border-radius: 5px; /* rounded */
+    padding: 0.5rem; /* p-2 (8px) */
+    width: 100%; /* w-full */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.Presupuesto-main section td input[type="number"]:focus {
+    border-color: #00796b; /* Color de borde al enfocar */
+}
+
+.Presupuesto-main section td button {
+    background-color: #F44336; /* bg-red-500 */
+    color: white; /* text-white */
+    padding: 0.3rem 0.75rem; /* px-3 py-1 (12px 4px) - ajustado */
+    border-radius: 5px; /* rounded */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* transition */
+    font-size: 0.9rem;
+}
+
+.Presupuesto-main section td button:hover {
+    background-color: #D32F2F; /* hover:bg-red-600 */
+}
+
+
+/* Resumen de presupuesto */
+.Presupuesto-main section > div:last-child { /* Target the last div child within the section */
+    background-color: #e3f2fd; /* bg-blue-100 */
+    padding: 1.5rem; /* p-6 (24px) - ajustado */
+    border-radius: 15px; /* rounded-2xl (32px) - ajustado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+    border-left: 5px solid #2196f3; /* Borde de color para destacar */
+}
+
+.Presupuesto-main section > div:last-child h3 {
+    font-size: 1.5rem; /* text-2xl (24px) */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1rem; /* mb-4 (16px) */
+    color: #212121;
+}
+
+.Presupuesto-main section > div:last-child p {
+    font-size: 1rem; /* text-lg (18px) - ajustado */
+    margin-bottom: 0.5rem; /* mb-2 (8px) */
+    color: #555;
+}
+
+.Presupuesto-main section > div:last-child p strong {
+    color: #333; /* Color más oscuro para las etiquetas */
+}
+
+
+/* Mensaje de resumen condicional */
+.Presupuesto-main section > div:last-child p.text-green-600 {
+    color: #388E3C; /* text-green-600 */
+    margin-top: 1rem; /* mt-4 (16px) */
+    font-weight: 600; /* font-semibold */
+}
+
+.Presupuesto-main section > div:last-child p.text-red-600 {
+    color: #D32F2F; /* text-red-600 */
+    margin-top: 1rem; /* mt-4 (16px) */
+    font-weight: 600; /* font-semibold */
+}
+
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    .Presupuesto-main section {
+        padding: 2rem 1.5rem;
+    }
+
+    .Presupuesto-main section > div:first-child {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .Presupuesto-main section > div:first-child h2 {
+        font-size: 1.8rem;
+    }
+
+    .Presupuesto-main section > h2:nth-of-type(1) {
+        font-size: 1.8rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .Presupuesto-main section .flex.mb-6 {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .Presupuesto-main section .flex.mb-6 input[type="text"],
+    .Presupuesto-main section .flex.mb-6 button {
+        border-radius: 5px; /* Redondear ambos lados */
+        width: 100%;
+    }
+
+    .Presupuesto-main section td input[type="number"] {
+        padding: 0.4rem;
+    }
+
+    .Presupuesto-main section td button {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.85rem;
+    }
+
+    .Presupuesto-main section > div:last-child {
+        padding: 1.2rem;
+    }
+
+    .Presupuesto-main section > div:last-child h3 {
+        font-size: 1.3rem;
+    }
+
+    .Presupuesto-main section > div:last-child p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .Presupuesto-main {
+        padding: 2rem 0.5rem;
+    }
+    .Presupuesto-main section {
+        padding: 1.5rem 1rem;
+    }
+
+    .Presupuesto-main section > div:first-child h2 {
+        font-size: 1.5rem;
+    }
+    .Presupuesto-main section > div:first-child p,
+    .Presupuesto-main section > div:first-child ul li {
+        font-size: 0.9rem;
+    }
+
+
+    .Presupuesto-main section > h2:nth-of-type(1) {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .Presupuesto-main section th,
+    .Presupuesto-main section td {
+        padding: 0.8rem;
+    }
+
+    .Presupuesto-main section td button {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .Presupuesto-main section > div:last-child h3 {
+        font-size: 1.2rem;
+    }
+
+    .Presupuesto-main section > div:last-child p {
+        font-size: 0.9rem;
+    }
+}

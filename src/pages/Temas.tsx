@@ -56,11 +56,28 @@ function Temas() {
                                 <li>Planificación mensual</li>
                                 <li>Herramientas digitales</li>
                             </ul>
-                            <Link to="/temas/diseña-tu-presupuesto" className="tema-link">
+                            <Link to="/temas/presupuesto" className="tema-link">
                                 Ver más <span className="arrow">→</span>
                             </Link>
                         </div>
                         <div className="tema-decoration tema-decoration-3"></div>
+                    </div>
+
+                    <div className="tema-item">
+                        <div className="tema-icon">💳</div>
+                        <div className="tema-content">
+                            <h3>Uso de Tarjetas</h3>
+                            <p>Aprende a manejar tus tarjetas de crédito.</p>
+                            <ul className="tema-benefits">
+                                <li>Control de gastos</li>
+                                <li>Planificación mensual</li>
+                                <li>Herramientas digitales</li>
+                            </ul>
+                            <Link to="/temas/tarjetas" className="tema-link">
+                                Ver más <span className="arrow">→</span>
+                            </Link>
+                        </div>
+                        <div className="tema-decoration tema-decoration-4"></div>
                     </div>
                 </div>
 

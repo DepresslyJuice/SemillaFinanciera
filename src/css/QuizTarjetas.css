@@ -1,0 +1,91 @@
+/* QuizTarjetas.css */
+
+/* Contenedor principal del quiz */
+.quiz-tarjetas {
+    padding: 2rem; /* Similar a p-6 */
+    background-color: white; /* bg-white */
+    border-radius: 1.5rem; /* rounded-2xl (24px) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 15px rgba(0, 0, 0, 0.1); /* shadow-md */
+    text-align: center; /* text-center */
+    max-width: 600px; /* Limitar ancho para mejor legibilidad */
+    margin: 2rem auto; /* Centrar el quiz */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente consistente */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+}
+
+/* Título del quiz */
+.quiz-tarjetas h3 {
+    font-size: 1.8rem; /* Ajustado, similar a text-2xl/text-3xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 1.5rem; /* Similar a mb-6 */
+    color: #212121; /* Color oscuro para el texto principal */
+}
+
+/* Texto de la pregunta o resultado */
+.quiz-tarjetas p {
+    font-size: 1.1rem; /* text-lg */
+    margin-bottom: 2rem; /* Similar a mb-8 */
+    color: #555; /* Color de texto secundario */
+    line-height: 1.6;
+}
+
+/* Contenedor de los botones */
+.quiz-tarjetas .flex {
+    display: flex; /* flex */
+    justify-content: center; /* justify-center */
+    gap: 1.5rem; /* gap-6 (ajustado a un valor absoluto) */
+    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+}
+
+/* Estilo base para los botones */
+.quiz-tarjetas button {
+    font-weight: 700; /* font-bold */
+    padding: 0.75rem 1.5rem; /* py-2 px-6 */
+    border-radius: 1.5rem; /* rounded-2xl */
+    color: white; /* text-white */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* transition */
+    min-width: 120px; /* Ancho mínimo para los botones */
+}
+
+/* Estilo para el botón "Verdadero" */
+.quiz-tarjetas button.bg-green-500 {
+    background-color: #4CAF50; /* Color verde */
+}
+
+.quiz-tarjetas button.bg-green-500:hover {
+    background-color: #388E3C; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón "Falso" */
+.quiz-tarjetas button.bg-red-500 {
+    background-color: #F44336; /* Color rojo */
+}
+
+.quiz-tarjetas button.bg-red-500:hover {
+    background-color: #D32F2F; /* Rojo más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón "Reiniciar Quiz" */
+.quiz-tarjetas button.bg-blue-500 {
+    background-color: #2196F3; /* Color azul */
+    margin-top: 1.5rem; /* mt-6 (ajustado) */
+}
+
+.quiz-tarjetas button.bg-blue-500:hover {
+    background-color: #1976D2; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Responsive adjustments for buttons */
+@media (max-width: 480px) {
+    .quiz-tarjetas .flex {
+        flex-direction: column; /* Apila los botones en pantallas muy pequeñas */
+        gap: 1rem; /* Espacio reducido */
+    }
+
+    .quiz-tarjetas button {
+        width: 100%; /* Ancho completo */
+        padding: 0.75rem 1rem; /* Padding ajustado */
+    }
+}

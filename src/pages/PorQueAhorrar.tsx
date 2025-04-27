@@ -15,6 +15,8 @@ function PorQueAhorrar() {
                 </div>
 
                 <div className="por-que-ahorrar-content">
+
+
                     <div className="por-que-ahorrar-card">
                         <h3>Beneficios de ahorrar</h3>
                         <ul className="por-que-ahorrar-list">
@@ -26,11 +28,15 @@ function PorQueAhorrar() {
                         </ul>
                     </div>
 
-                    <div className="por-que-ahorrar-quote">
-                        <blockquote>
-                            "No importa cuánto ganes, sino cuánto logras ahorrar para hacer realidad tus sueños."
-                            <footer>- Sabiduría financiera</footer>
-                        </blockquote>
+                    <div className="por-que-ahorrar-card">
+                        <h3>Razones más comunes por las que ahorrar</h3>
+                        <ul className="por-que-ahorrar-list">
+                            <li><strong>Emergencias:</strong> Para gastos inesperados como enfermedades o reparaciones.</li>
+                            <li><strong>Metas personales:</strong> Cumplir sueños como viajar, estudiar o comprar un auto.</li>
+                            <li><strong>Retiro o jubilación:</strong> Asegurar un futuro cómodo cuando dejemos de trabajar.</li>
+                            <li><strong>Inversiones:</strong> Hacer crecer el dinero en negocios o proyectos.</li>
+                            <li><strong>Tranquilidad financiera:</strong> Vivir sin preocupaciones económicas.</li>
+                        </ul>
                     </div>
 
                     <div className="por-que-ahorrar-card">
@@ -54,6 +60,13 @@ function PorQueAhorrar() {
                         </div>
                     </div>
 
+                    <div className="por-que-ahorrar-quote">
+                        <blockquote>
+                            "No importa cuánto ganes, sino cuánto logras ahorrar para hacer realidad tus sueños."
+                            <footer>- Sabiduría financiera</footer>
+                        </blockquote>
+                    </div>
+
                     <div className="por-que-ahorrar-video">
                         <h3>Descubre más en el siguiente video</h3>
                         <div className="video-wrapper">
@@ -73,7 +86,7 @@ function PorQueAhorrar() {
                     </div>
 
                     <div className="por-que-ahorrar-cta">
-                        <Link to="/temas" className="por-que-ahorrar-link">
+                        <Link to="/temas/metodos" className="por-que-ahorrar-link">
                             Descubre métodos de ahorro <i className="fas fa-arrow-right arrow"></i>
                         </Link>
                     </div>

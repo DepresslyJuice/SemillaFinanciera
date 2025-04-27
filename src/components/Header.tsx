@@ -24,6 +24,7 @@ function Header() {
     return (
         <header className={`header-modern ${scrolled ? 'scrolled' : ''}`}>
             <div className="header-container">
+                <a href="/">
                 <div className="logo-container">
                     <div className="logo-icon">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo-svg">
@@ -35,6 +36,7 @@ function Header() {
                     </div>
                     <h1>Semilla Financiera</h1>
                 </div>
+                </a>
 
                 <button className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={() => setMenuOpen(!menuOpen)}>
                     <span></span>
@@ -46,7 +48,6 @@ function Header() {
                     <ul>
                         <li><Link to="/" className="nav-link" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
                         <li><Link to="/temas" className="nav-link" onClick={() => setMenuOpen(false)}>Temas</Link></li>
-                        <li><Link to="/recursos" className="nav-link" onClick={() => setMenuOpen(false)}>Recursos</Link></li>
                         <li><Link to="/contacto" className="nav-link" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
                     </ul>
                 </nav>

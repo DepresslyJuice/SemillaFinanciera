@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../css/MetodosAhorro.css";
+import CalculadoraAhorro from "../components/CalculadoraAhorro";
+
 
 
 function MetodosAhorro() {
@@ -74,6 +76,15 @@ function MetodosAhorro() {
             icono: "📝",
             bgImage: "linear-gradient(135deg, #c471f5 0%, #fa71cd 100%)"
         },
+        {
+            titulo: "Calculadora",
+            descripcionCorta: "Ocupa la siguiente calculadora para calcular cuanto debes ahorrar",
+            descripcionLarga:
+                "",
+            color: "#ecf186",
+            icono: "🧮",
+            bgImage: "linear-gradient(135deg, #ecf186 0%, #a6efa1 100%)"
+        },
     ];
 
     return (
@@ -110,11 +121,6 @@ function MetodosAhorro() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
-                <div className="swiper-controls">
-                    <button className="swiper-button-prev custom-swiper-button">❮</button>
-                    <button className="swiper-button-next custom-swiper-button">❯</button>
-                </div>
             </div>
 
             {metodoSeleccionado !== null && (
@@ -137,10 +143,15 @@ function MetodosAhorro() {
                             <h3 className="modal-titulo">{metodos[metodoSeleccionado].titulo}</h3>
                         </div>
                         <div className="modal-descripcion">
-                            {metodos[metodoSeleccionado].descripcionLarga.split('\n').map((linea, idx) => (
-                                <p key={idx}>{linea}</p>
-                            ))}
+                            {metodos[metodoSeleccionado].titulo === "Calculadora" ? (
+                                <CalculadoraAhorro />
+                            ) : (
+                                metodos[metodoSeleccionado].descripcionLarga.split('\n').map((linea, idx) => (
+                                    <p key={idx}>{linea}</p>
+                                ))
+                            )}
                         </div>
+
                         <button
                             className="cerrar-modal-boton"
                             onClick={() => setMetodoSeleccionado(null)}
