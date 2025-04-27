@@ -1,7 +1,10 @@
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
 import WelcomeSection from "./pages/WelcomeSection.tsx";
+
 
 function App() {
     return (
@@ -9,7 +12,6 @@ function App() {
             <Header />
             <main>
                 <WelcomeSection />
-                <Home />
             </main>
             <Footer />
         </>

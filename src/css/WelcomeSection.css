@@ -1,0 +1,46 @@
+/* src/pages/WelcomeSection.css */
+.welcome {
+    height: 100vh; /* Asegura que la sección ocupe toda la altura de la pantalla */
+    padding: 2rem;
+    background-color: #f0f4f8;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+}
+
+.welcome h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.welcome p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #34495e;
+}
+
+.welcome blockquote {
+    margin-top: 2rem;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #27ae60;
+}
+
+.welcome button {
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #27ae60;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.welcome button:hover {
+    background-color: #2ecc71;
+}
