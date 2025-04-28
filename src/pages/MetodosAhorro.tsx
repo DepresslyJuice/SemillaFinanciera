@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
+// @ts-ignore
 import "swiper/css";
 import "../css/MetodosAhorro.css";
 import CalculadoraAhorro from "../components/CalculadoraAhorro";
@@ -27,6 +28,7 @@ function MetodosAhorro() {
                 (swiperElement as any).swiper.slideNext();
             }
         };
+
 
         prevButton?.addEventListener('click', handlePrev);
         nextButton?.addEventListener('click', handleNext);
@@ -55,6 +57,7 @@ function MetodosAhorro() {
             descripcionLarga:
                 "Este método popular divide tus ingresos después de impuestos en tres categorías: 50% para necesidades esenciales (alquiler, comida, transporte), 30% para deseos (ocio, salir a comer, hobbies) y 20% para ahorro e inversión o pago de deudas.\n\n✅ Ventajas: Fácil de aplicar, ideal para principiantes en finanzas personales.\n⚠️ Desventajas: No considera variaciones de ingresos o gastos extraordinarios.\n💡 Consejo: Automatiza el 20% de ahorro configurando una transferencia automática el día de tu pago.",
             color: "#4299e1",
+            link: "https://www.youtube.com/watch?v=_bgUUswBttU",
             icono: "💰",
             bgImage: "linear-gradient(135deg, #a6c0fe 0%, #f68084 100%)"
         },
@@ -64,6 +67,7 @@ function MetodosAhorro() {
             descripcionLarga:
                 "Ideal para controlar el gasto impulsivo. Asigna una cantidad fija de efectivo a diferentes sobres etiquetados por categoría (comida, entretenimiento, gasolina, etc.).\n\n✅ Ventajas: Control visual del gasto, disminuye uso de tarjetas de crédito.\n⚠️ Desventajas: Puede ser incómodo manejar efectivo en algunos contextos.\n💡 Consejo: Usa sobres virtuales o apps si prefieres pagar todo de manera digital.",
             color: "#38b2ac",
+            link: "https://www.youtube.com/watch?v=qr9QoQsa61c",
             icono: "✉️",
             bgImage: "linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%)"
         },
@@ -73,6 +77,7 @@ function MetodosAhorro() {
             descripcionLarga:
                 "El Kakebo, o 'libro de cuentas para la economía doméstica', es un método japonés de presupuesto que se centra en la atención plena sobre tus hábitos de gasto.\n\n✅ Ventajas: Promueve la conciencia financiera profunda.\n⚠️ Desventajas: Puede requerir más tiempo y constancia diaria.\n💡 Consejo: Dedica solo 5 minutos al día para registrar tus movimientos y notarás el cambio.",
             color: "#805ad5",
+            link: "https://www.youtube.com/watch?v=2qxXEBK-xV8&t=82s",
             icono: "📝",
             bgImage: "linear-gradient(135deg, #c471f5 0%, #fa71cd 100%)"
         },
@@ -146,9 +151,23 @@ function MetodosAhorro() {
                             {metodos[metodoSeleccionado].titulo === "Calculadora" ? (
                                 <CalculadoraAhorro />
                             ) : (
-                                metodos[metodoSeleccionado].descripcionLarga.split('\n').map((linea, idx) => (
-                                    <p key={idx}>{linea}</p>
-                                ))
+                                <>
+                                    {metodos[metodoSeleccionado].descripcionLarga.split('\n').map((linea, idx) => (
+                                        <p key={idx}>{linea}</p>
+                                    ))}
+                                    {metodos[metodoSeleccionado].link && (
+                                        <div className="modal-link">
+                                            <a
+                                                href={metodos[metodoSeleccionado].link}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="modal-link-button"
+                                            >
+                                                Ver más información 🔗
+                                            </a>
+                                        </div>
+                                    )}
+                                </>
                             )}
                         </div>
 

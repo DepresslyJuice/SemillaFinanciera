@@ -1,0 +1,26 @@
+/* Footer.css */
+
+.site-footer {
+    margin-top: 4rem; /* Espacio superior, quizás un poco más que 2rem para separarlo del contenido */
+    padding: 1.5rem 1rem; /* Un poco más de padding vertical */
+    background-color: #212121; /* Un gris oscuro, similar a #333 */
+    color: white;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente consistente */
+    font-size: 0.9rem; /* Tamaño de fuente ligeramente más pequeño */
+    line-height: 1.6; /* Espacio entre líneas */
+}
+
+/* Estilo para los párrafos dentro del footer */
+.site-footer p {
+    margin: 0.5rem 0; /* Un poco de margen vertical entre los párrafos */
+    padding: 0; /* Asegurarse de que no tienen padding */
+}
+
+/* Opcional: puedes añadir un borde superior para darle más definición */
+/*
+.site-footer {
+    border-top: 5px solid #00796b; // Usando el color primario
+    ...otros estilos...
+}
+*/

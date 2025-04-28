@@ -1,0 +1,230 @@
+/* Contacto.css */
+
+/* Contenedor principal con fondo (similar a las otras vistas) */
+.contacto-container {
+    margin-top: 100px; /* Ajusta según necesites para el header */
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    background-image:
+            linear-gradient(45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(-45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #f1f5f9 75%),
+            linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+    background-size: 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: calc(100vh - 100px); /* Asegura que ocupe al menos la altura restante de la ventana */
+    display: flex; /* Centrar contenido verticalmente si es más corto que la ventana */
+    align-items: center;
+}
+
+/* Sección principal de contenido (la "tarjeta" blanca centrada) */
+.contacto-main-section {
+    max-width: 1000px; /* Ancho máximo */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 2.5rem 2rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Asegura que ocupe el ancho máximo disponible */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+/* Bloques de información dentro de la sección principal */
+.contacto-info-block {
+    margin-bottom: 2.5rem; /* Espacio entre bloques */
+    padding-bottom: 2.5rem; /* Padding inferior para el borde */
+    border-bottom: 1px solid #eee; /* Separador sutil */
+}
+
+.contacto-info-block:last-child {
+    margin-bottom: 0; /* No hay margen inferior en el último bloque */
+    padding-bottom: 0;
+    border-bottom: none; /* No hay borde inferior en el último bloque */
+}
+
+
+/* Encabezado con logo y texto de la institución */
+.institucion-header {
+    display: flex; /* Alinear logo y texto horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    gap: 2rem; /* Espacio entre logo y texto */
+    margin-bottom: 1.5rem;
+}
+
+/* Placeholder/Contenedor del logo */
+.institucion-logo-placeholder {
+    width: 100px; /* Tamaño del logo */
+    height: 100px;
+    background-color: #e0f7fa; /* Fondo suave */
+    border-radius: 15px; /* Bordes redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #00796b; /* Color del texto placeholder */
+    text-align: center;
+    flex-shrink: 0; /* Previene que el logo se encoja */
+    overflow: hidden; /* Esconde el contenido si es más grande */
+}
+
+
+.institucion-logo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ajusta la imagen manteniendo la proporción
+}
+
+
+/* Contenedor del texto de la institución */
+.institucion-text {
+    flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
+}
+
+
+/* Títulos de los bloques */
+.contacto-main-section h2 {
+    font-size: 2rem; /* Tamaño del título */
+    color: #212121;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block; /* Para que el ::after funcione correctamente */
+}
+
+/* Subrayado para los títulos */
+.contacto-main-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* Ajusta la posición del subrayado */
+    left: 0;
+    width: 60px; /* Ancho del subrayado */
+    height: 3px;
+    background: linear-gradient(to right, #00796b, #004d40); /* Gradiente similar */
+    border-radius: 2px;
+}
+
+/* Párrafos generales dentro de los bloques */
+.contacto-main-section p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem; /* Espacio entre párrafos */
+}
+
+.contacto-main-section p:last-child {
+    margin-bottom: 0; /* Sin margen inferior en el último párrafo */
+}
+
+/* Lista de creadores */
+.creadores-list {
+    list-style: none; /* Eliminar marcadores por defecto */
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.creadores-list li {
+    position: relative;
+    padding-left: 1.5rem; /* Espacio para el marcador */
+    margin-bottom: 0.6rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Marcador personalizado para la lista de creadores */
+.creadores-list li::before {
+    content: '•'; /* Un punto como marcador */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00796b; /* Color del marcador */
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Estilo para enlaces */
+.contacto-main-section a {
+    color: #00796b; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado por defecto */
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.contacto-main-section a:hover {
+    color: #004d40; /* Color más oscuro al pasar el mouse */
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+
+/* --- Diseño Responsivo --- */
+@media (max-width: 768px) {
+    .contacto-container {
+        padding: 2rem 0.5rem; /* Reducir padding en pantallas pequeñas */
+    }
+
+    .contacto-main-section {
+        padding: 2rem 1.5rem; /* Reducir padding interno */
+    }
+
+    .contacto-main-section h2 {
+        font-size: 1.8rem; /* Reducir tamaño del título */
+    }
+
+    .institucion-header {
+        flex-direction: column; /* Apilar logo y texto */
+        align-items: flex-start; /* Alinear a la izquierda */
+        gap: 1.5rem;
+    }
+
+    .institucion-logo-placeholder {
+        width: 80px; /* Reducir tamaño del logo */
+        height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contacto-container {
+        padding: 1.5rem 0.5rem;
+    }
+    .contacto-main-section {
+        padding: 1.5rem 1rem;
+        border-radius: 15px;
+    }
+
+    .contacto-main-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .contacto-main-section h2::after {
+        width: 40px; /* Reducir ancho del subrayado */
+        bottom: -3px;
+    }
+
+    .contacto-main-section p,
+    .creadores-list li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+
+    .institucion-header {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .institucion-logo-placeholder {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        font-size: 0.8rem;
+    }
+
+    .creadores-list li::before {
+        font-size: 1rem;
+    }
+
+    .contacto-info-block {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+}

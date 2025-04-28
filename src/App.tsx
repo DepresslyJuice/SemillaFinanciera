@@ -6,6 +6,7 @@ import PorQueAhorrar from "./pages/PorQueAhorrar.tsx";
 import MetodosAhorro from "./pages/MetodosAhorro.tsx";
 import Tarjetas from "./pages/Tarjetas.tsx";
 import Presupuesto from "./pages/Presupuesto.tsx";
+import Contacto from "./pages/Contacto.tsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -25,6 +26,7 @@ function App() {
                     <Route path="/temas/Metodos" element={<MetodosAhorro />} />
                     <Route path="/temas/Presupuesto" element={<Presupuesto />} />
                     <Route path="/temas/Tarjetas" element={<Tarjetas />} />
+                    <Route path="/Contacto" element={<Contacto />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>

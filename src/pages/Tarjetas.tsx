@@ -1,4 +1,3 @@
-import React from 'react';
 import QuizTarjetas from '../components/QuizTarjetas';
 import '../css/Tarjetas.css';
 import Tarjeta from '../assets/Tarjeta.svg';
