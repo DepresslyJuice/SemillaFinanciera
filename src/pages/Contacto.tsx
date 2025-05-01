@@ -7,7 +7,7 @@ import '../css/Contacto.css'; // Importamos el archivo CSS
 function Contacto() {
     // Datos inventados para el ejemplo
     const institucion = {
-        nombre: 'Unidad Educativa Mitad del Mundo',
+        nombre: 'Mitad del Mundo',
         direccion: 'Av. Manuel Córdova Galaraza y Calle 21 de Marzo',
     };
 
