@@ -22,9 +22,10 @@ function WelcomeSection() {
                 <div className="welcome-content">
                     <div className="welcome-text">
                         <p>
-                            Tener un hábito de ahorrar y hacer tu planificación financiera dará como resultado un futuro estable y el alcance de tus metas personales.
-                            Un buen presupuesto nos ayuda a organizar nuestros ingresos y gastos, controlar deudas y tomar decisiones financieras más inteligentes.
-                            Este hábito no solo mejora la calidad de vida, sino que también garantiza una mayor seguridad financiera.
+                            Adquirir el hábito de ahorrar y realizar una adecuada planificación financiera contribuye a
+                            lograr un futuro estable y alcanzar metas personales. Un buen presupuesto permite organizar
+                            los ingresos y gastos, controlar las deudas y tomar decisiones financieras más acertadas.
+                            Este hábito no solo mejora la calidad de vida, sino que también brinda mayor seguridad financiera.
                         </p>
 
                         <blockquote>

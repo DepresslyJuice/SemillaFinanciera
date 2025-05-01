@@ -207,7 +207,8 @@
     }
 
     .modal-header {
-        padding: 2rem;
+        padding: 1rem;
+        max-height: 200px;
         text-align: center;
         color: white;
         position: relative;
@@ -226,7 +227,7 @@
     }
 
     .modal-icon {
-        font-size: 3rem;
+        font-size: 1rem;
         margin-bottom: 0.5rem;
         display: block;
         position: relative;
@@ -234,7 +235,8 @@
     }
 
     .modal-titulo {
-        font-size: 2rem;
+        font-size: 28px;
+        padding-bottom: 1rem;
         font-weight: 700;
         margin: 0;
         position: relative;

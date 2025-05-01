@@ -7,7 +7,7 @@ function Tarjetas() {
         <div className="tarjetas-container">
             <section className="tarjetas">
                 <div className="tarjetas-header">
-                    <h2>Todo lo que necesitas saber sobre las tarjetas de crédito</h2>
+                    <h2>Tips que necesitas sobre las tarjetas de crédito</h2>
                 </div>
 
                 <div className="tarjetas-content">
