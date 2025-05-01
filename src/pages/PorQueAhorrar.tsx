@@ -74,7 +74,21 @@ function PorQueAhorrar() {
                             <p className="reality"><strong>Consejo:</strong> Si tu presupuesto lo permite, destina un 30% a esta área, pero sin comprometer lo esencial o el ahorro. Gastar con conciencia también es parte del bienestar financiero.</p>
                         </div>
                     </div>
-
+                    <div className="por-que-ahorrar-card">
+                        <h3>Diferencia entre deseo y necesidad</h3>
+                        <div className="myth-reality">
+                            <p className="point"><strong>Necesidad:</strong> Pagar la renta o hipoteca de tu vivienda.</p>
+                            <p className="reality"><strong>Otro Ejemplo:</strong> Comprar alimentos básicos para la semana.</p>
+                        </div>
+                        <div className="myth-reality">
+                            <p className="point"><strong>Deseo:</strong> Ir a un concierto o evento recreativo.</p>
+                            <p className="reality"><strong>Otro Ejemplo:</strong> Comprar ropa de marca aunque ya tienes suficiente ropa funcional.</p>
+                        </div>
+                        <div className="myth-reality">
+                            <p className="point"><strong>Importancia:</strong> Saber distinguir entre necesidad y deseo te permite tomar decisiones financieras más responsables.</p>
+                            <p className="reality"><strong>Consejo:</strong> Antes de gastar, pregúntate: “¿Esto es algo que realmente necesito o simplemente quiero en este momento?”</p>
+                        </div>
+                    </div>
 
                     <div className="por-que-ahorrar-quote">
                         <blockquote>
