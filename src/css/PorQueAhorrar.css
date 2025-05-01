@@ -193,6 +193,20 @@
     color: #388e3c;
 }
 
+.point {
+    color: #212121;
+    font-weight: 500;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.point::before {
+    content: '💡';
+    position: absolute;
+    left: 0;
+    color: #388e3c;
+}
+
 .por-que-ahorrar-video {
     margin: 2rem 0;
 }
