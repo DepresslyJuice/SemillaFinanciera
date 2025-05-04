@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import '../css/Presupuesto.css'
+import NetIncomeCalculator from "../components/NetIncomeCalculator.tsx";
 
 interface PresupuestoItem {
     categoria: string;
@@ -168,6 +169,8 @@ function DisenaTuPresupuesto() {
                     {mensajeResumen}
                 </p>
             </div>
+            <h2 className="text-3xl font-bold mb-6">Calcula tu ingreso Neto</h2>
+            <NetIncomeCalculator />
         </section>
         </div>
     );

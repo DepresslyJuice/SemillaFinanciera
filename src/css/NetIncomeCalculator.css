@@ -1,0 +1,153 @@
+/* NetIncomeCalculator.css */
+
+/* Contenedor principal (la "tarjeta" centrada) */
+.net-income-calculator-container {
+    max-width: 500px; /* Limitar el ancho para que no sea demasiado grande */
+    margin: 4rem auto; /* Centrar horizontalmente y añadir espacio superior */
+    padding: 2rem; /* Padding interno */
+    background-color: white; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente consistente */
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+
+/* Título de la calculadora */
+.net-income-calculator-container h2 {
+    font-size: 2rem;
+    color: #212121;
+    margin-bottom: 2rem; /* Espacio debajo del título */
+    text-align: center; /* Centrar el título */
+    position: relative;
+    display: inline-block; /* Necesario para el subrayado centrado */
+    width: 100%; /* Ocupar el ancho completo para centrar pseudo-elemento */
+}
+
+/* Subrayado para el título */
+.net-income-calculator-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Posición del subrayado */
+    left: 50%; /* Iniciar desde el centro */
+    transform: translateX(-50%); /* Mover hacia la izquierda la mitad de su ancho para centrarlo */
+    width: 80px; /* Ancho del subrayado */
+    height: 3px;
+    background: linear-gradient(to right, #00796b, #004d40); /* Gradiente similar */
+    border-radius: 2px;
+}
+
+/* Contenedor de cada grupo de label/input */
+.net-income-calculator-container > div {
+    margin-bottom: 1.5rem; /* Espacio entre los grupos de input */
+}
+
+/* Estilo para las etiquetas (labels) */
+.net-income-calculator-container label {
+    display: block; /* Cada label en su propia línea */
+    margin-bottom: 0.5rem; /* Espacio entre el label y el input */
+    font-weight: 600; /* Semi-negrita */
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Estilo para los campos de entrada de número */
+.net-income-calculator-container input[type="number"] {
+    width: 100%; /* Ocupar todo el ancho disponible */
+    padding: 0.75rem 1rem; /* Padding interno */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    font-size: 1rem;
+    color: #555;
+    transition: border-color 0.3s ease; /* Transición suave para el borde */
+    outline: none; /* Eliminar el outline por defecto al enfocar */
+}
+
+/* Estilo al enfocar los campos de entrada */
+.net-income-calculator-container input[type="number"]:focus {
+    border-color: #00796b; /* Color del borde al enfocar */
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3); /* Sombra sutil al enfocar */
+}
+
+/* Estilo para el botón de calcular */
+.calculate-button {
+    display: block; /* Botón como bloque para centrarlo */
+    margin: 2rem auto 1.5rem auto; /* Espacio arriba y abajo, centrado */
+    padding: 0.8rem 2rem; /* Padding del botón */
+    background-color: #00796b; /* Color primario (teal) */
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; /* Bordes muy redondeados (pastilla) */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Transición suave */
+    text-transform: uppercase; /* Opcional: texto en mayúsculas */
+    letter-spacing: 0.5px; /* Opcional: espacio entre letras */
+}
+
+.calculate-button:hover {
+    background-color: #004d40; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de levantar ligeramente */
+}
+
+.calculate-button:active {
+    transform: translateY(0); /* Eliminar efecto al hacer click */
+}
+
+
+/* Contenedor del resultado */
+.result-display {
+    margin-top: 2rem; /* Espacio arriba del resultado */
+    padding: 1.5rem; /* Padding interno */
+    background-color: #e0f7fa; /* Fondo suave (azul/verde claro) */
+    border-radius: 10px; /* Bordes redondeados */
+    border-left: 5px solid #00796b; /* Borde izquierdo de color */
+    text-align: center; /* Centrar el texto del resultado */
+}
+
+/* Título del resultado */
+.result-display h3 {
+    font-size: 1.6rem;
+    color: #212121;
+    margin: 0; /* Eliminar margen por defecto */
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .net-income-calculator-container {
+        margin: 2rem 1rem; /* Menos margen lateral en pantallas pequeñas */
+        padding: 1.5rem;
+    }
+
+    .net-income-calculator-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .net-income-calculator-container h2::after {
+        width: 60px;
+        bottom: -8px;
+    }
+
+    .net-income-calculator-container > div {
+        margin-bottom: 1rem;
+    }
+
+    .net-income-calculator-container label,
+    .net-income-calculator-container input[type="number"],
+    .calculate-button,
+    .result-display h3 {
+        font-size: 1rem; /* Ajustar tamaño de fuente general */
+    }
+
+    .calculate-button {
+        padding: 0.6rem 1.5rem;
+    }
+
+    .result-display {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+}
