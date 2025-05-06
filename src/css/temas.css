@@ -12,6 +12,7 @@
     --card-2: #8e44ad;
     --card-3: #27ae60;
     --card-4: #e3ca2b;
+    --card-5: #f31246;
 }
 
 .temas-container {
@@ -120,6 +121,10 @@
     border-color: var(--card-4);
 }
 
+.tema-item:nth-child(5) {
+    border-color: var(--card-5);
+}
+
 .tema-icon {
     font-size: 2rem;
     width: 60px;
@@ -152,6 +157,10 @@
     color: var(--card-4);
 }
 
+.tema-item:nth-child(5) .tema-icon {
+    background-color: rgb(136, 43, 43);
+    color: var(--card-5);
+}
 .tema-item h3 {
     font-size: 1.5rem;
     color: var(--dark);
@@ -206,6 +215,9 @@
     color: var(--card-4);
 }
 
+.tema-item:nth-child(5) .tema-benefits li::before {
+    color: var(--card-5);
+}
 .tema-link {
     display: inline-flex;
     align-items: center;
@@ -239,6 +251,10 @@
     background-color: var(--card-4);
 }
 
+.tema-item:nth-child(5) .tema-link {
+    color: white;
+    background-color: var(--card-5);
+}
 .tema-link .arrow {
     display: inline-block;
     margin-left: 0.5rem;
@@ -277,10 +293,12 @@
     background-color: var(--card-3);
 }
 
-.tema-decoration-3 {
+.tema-decoration-4 {
     background-color: var(--card-4);
 }
-
+.tema-decoration-5 {
+    background-color: var(--card-5);
+}
 
 
 .tema-item:hover {

@@ -6,9 +6,11 @@ import PorQueAhorrar from "./pages/PorQueAhorrar.tsx";
 import MetodosAhorro from "./pages/MetodosAhorro.tsx";
 import Tarjetas from "./pages/Tarjetas.tsx";
 import Presupuesto from "./pages/Presupuesto.tsx";
+import GastosDeseos from "./pages/GastosDeseos.tsx";
 import Contacto from "./pages/Contacto.tsx";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -26,6 +28,7 @@ function App() {
                     <Route path="/temas/Metodos" element={<MetodosAhorro />} />
                     <Route path="/temas/Presupuesto" element={<Presupuesto />} />
                     <Route path="/temas/Tarjetas" element={<Tarjetas />} />
+                    <Route path="/temas/Gastos" element={<GastosDeseos />} />
                     <Route path="/Contacto" element={<Contacto />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

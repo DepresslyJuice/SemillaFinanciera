@@ -79,6 +79,23 @@ function Temas() {
                         </div>
                         <div className="tema-decoration tema-decoration-4"></div>
                     </div>
+
+                    <div className="tema-item">
+                        <div className="tema-icon">🍾</div>
+                        <div className="tema-content">
+                            <h3>Gastos y deseos</h3>
+                            <p>Identificar la diferencia entre gastos necesarios y deseos es clave para mantener un presupuesto equilibrado y evitar deudas innecesarias.</p>
+                            <ul className="tema-benefits">
+                                <li>Jerarquización de gastos</li>
+                                <li>Planificación mensual efectiva con prioridades claras</li>
+                                <li>Poder identificar entre deseo y necesidad</li>
+                            </ul>
+                            <Link to="/temas/gastos" className="tema-link">
+                                Ver más <span className="arrow">→</span>
+                            </Link>
+                        </div>
+                        <div className="tema-decoration tema-decoration-5"></div>
+                    </div>
                 </div>
 
                 <div className="temas-footer">

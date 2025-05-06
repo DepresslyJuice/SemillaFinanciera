@@ -1,0 +1,275 @@
+/* GastosDeseos.css */
+
+/* Contenedor principal con fondo (similar a las otras vistas) */
+.gastos-container {
+    margin-top: 100px; /* Ajusta según necesites para el header */
+    padding: 3rem 1rem;
+    background-color: #f9f9f9;
+    background-image:
+            linear-gradient(45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(-45deg, #f1f5f9 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #f1f5f9 75%),
+            linear-gradient(-45deg, transparent 75%, #f1f5f9 75%);
+    background-size: 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: calc(100vh - 100px);
+}
+
+/* Contenedor para las tarjetas (permite layout de columnas/grid si se desea) */
+.gastos {
+    max-width: 1200px; /* Ancho máximo similar a otras secciones */
+    margin: 0 auto; /* Centrar */
+    padding: 0; /* El padding va en las tarjetas */
+    display: flex; /* <--- CAMBIAR a flex */
+    flex-direction: row; /* <--- Alinear horizontalmente (es el valor por defecto, pero explícito es claro) */
+    flex-wrap: wrap; /* <--- Permite que las tarjetas pasen a la siguiente fila si no caben */
+    gap: 2rem; /* <--- Espacio entre tarjetas (funciona con flexbox) */
+    align-items: stretch; /* <--- Asegura que las tarjetas tengan la misma altura */
+    justify-content: center; /* <--- Opcional: Centra las tarjetas si no llenan la última fila */
+}
+
+/* Estilo para cada tarjeta individual */
+.gastos-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex; /* Usar flexbox para apilar contenido dentro de la tarjeta */
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Elimina el border-top si ya no lo necesitas, o añádelo aquí si quieres un color */
+    /* border-top: 5px solid #00796b; */
+}
+
+.gastos-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Título de la tarjeta */
+.gastos-card h3 {
+    font-size: 1.8rem;
+    color: #212121;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px; /* Espacio para el subrayado */
+    /* Si quieres que el subrayado esté solo bajo el texto, usa display: inline-block */
+    /* Si quieres que el subrayado ocupe el ancho, usa display: block y text-align: center para el texto */
+}
+
+/* Subrayado para los títulos de tarjeta */
+.gastos-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; /* O left: 50%; transform: translateX(-50%); si el h3 es block y quieres centrarlo */
+    width: 60px; /* Ancho del subrayado */
+    height: 3px;
+    background: linear-gradient(to right, #00796b, #004d40);
+    border-radius: 2px;
+}
+
+
+/* Estilo para los bloques de contenido dentro de las tarjetas (Jerarquía, Distinción, Estrategias) */
+.hierarchy-level,
+.distinction-block,
+.strategy-block {
+    margin-bottom: 1.5rem; /* Espacio entre los bloques */
+    padding-bottom: 1.5rem; /* Espacio antes del borde */
+    border-bottom: 1px solid #eee; /* Separador */
+}
+
+.hierarchy-level:last-child,
+.distinction-block:last-child,
+.strategy-block:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none; /* No hay borde después del último bloque */
+}
+
+
+/* Subtítulos dentro de los bloques */
+.gastos-card h4 {
+    font-size: 1.2rem;
+    color: #00796b; /* Color del subrayado del título principal */
+    margin-bottom: 0.8rem; /* Espacio debajo del subtítulo */
+}
+
+/* Párrafos dentro de los bloques */
+.gastos-card p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem; /* Espacio entre párrafos */
+}
+
+.gastos-card p:last-child {
+    margin-bottom: 0; /* Sin margen inferior en el último párrafo */
+}
+
+/* Estilo específico para los párrafos de consejo */
+.gastos-card p.consejo {
+    font-style: italic; /* Texto en cursiva */
+    color: #004d40; /* Un color que destaque un poco */
+    margin-top: 1rem; /* Espacio arriba del consejo */
+    padding: 0.8rem; /* Padding alrededor del texto */
+    background-color: #e0f7fa; /* Fondo suave */
+    border-left: 4px solid #00796b; /* Borde izquierdo de color */
+    border-radius: 5px;
+}
+
+.gastos-card p.consejo strong {
+    color: #003333; /* Color más oscuro para la palabra "Consejo" */
+}
+
+/* Estilo para las listas dentro de los bloques */
+.gastos-card ul {
+    list-style: none; /* Eliminar marcadores por defecto */
+    padding: 0;
+    margin-top: 0.5rem; /* Espacio arriba de la lista */
+    margin-bottom: 0.8rem; /* Espacio debajo de la lista */
+}
+
+.gastos-card ul li {
+    position: relative;
+    padding-left: 1.5rem; /* Espacio para el marcador personalizado */
+    margin-bottom: 0.5rem; /* Espacio entre elementos de lista */
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Marcador personalizado para las listas */
+.gastos-card ul li::before {
+    content: '•'; /* Un punto como marcador */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00796b; /* Color del marcador */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+/* Contenedor de la calculadora */
+.calculadora-container {
+    width: 100%; /* Hace que el contenedor de la calculadora ocupe todo el ancho disponible */
+    margin-top: 2rem; /* Mantén el margen superior */
+    padding: 2rem;
+    background-color: #e0f7fa;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #004d40;
+}
+
+
+/* Título dentro del contenedor de la calculadora */
+.calculadora-title {
+    font-size: 1.8rem;
+    color: #212121;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Ajuste para tablets */
+    .gastos {
+        grid-template-columns: 1fr; /* Una sola columna en tablets */
+        gap: 1.5rem;
+    }
+
+    .gastos-card {
+        padding: 1.5rem;
+    }
+
+    .gastos-card h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .gastos-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .gastos-card p,
+    .gastos-card ul li,
+    .gastos-card p.consejo {
+        font-size: 0.95rem;
+    }
+
+    .hierarchy-level,
+    .distinction-block,
+    .strategy-block {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .calculadora-container {
+        padding: 1.5rem;
+    }
+
+    .calculadora-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) { /* Ajuste para móviles */
+    .gastos-container {
+        padding: 2rem 0.5rem;
+    }
+
+    .gastos-card {
+        padding: 1.2rem;
+        border-radius: 15px;
+    }
+
+    .gastos-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .gastos-card h3::after {
+        width: 40px;
+        bottom: -3px;
+    }
+
+    .gastos-card h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .gastos-card p,
+    .gastos-card ul li,
+    .gastos-card p.consejo {
+        font-size: 0.9rem;
+    }
+
+    .hierarchy-level,
+    .distinction-block,
+    .strategy-block {
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+
+    .gastos-card p.consejo {
+        padding: 0.6rem;
+        margin-top: 0.8rem;
+    }
+
+
+    .calculadora-container {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .calculadora-title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Asegurar que el componente de la calculadora se ajuste bien */
+    .calculadora-container > div { /* Target the NetIncomeCalculator component's container div */
+        padding: 1rem; /* Ajustar padding interno de la calculadora si es necesario */
+    }
+}

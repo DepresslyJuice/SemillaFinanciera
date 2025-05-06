@@ -1,153 +1,400 @@
-/* NetIncomeCalculator.css */
+/* NetIncomeCalculatorEnhanced.css */
 
-/* Contenedor principal (la "tarjeta" centrada) */
-.net-income-calculator-container {
-    max-width: 500px; /* Limitar el ancho para que no sea demasiado grande */
-    margin: 4rem auto; /* Centrar horizontalmente y añadir espacio superior */
-    padding: 2rem; /* Padding interno */
-    background-color: white; /* Fondo blanco */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave */
+/* Variables CSS para aproximar los colores de Tailwind */
+/* Puedes ajustar estos colores para que coincidan exactamente con tu paleta */
+:root {
+    --tw-blue-600: #2563eb;
+    --tw-blue-800: #1e40af;
+    --tw-blue-500: #3b82f6;
+    --tw-blue-200: #bfdbfe;
+    --tw-blue-50: #eff6ff;
+
+    --tw-green-600: #22c55e;
+    --tw-green-500: #22c55e; /* Usando el mismo color para el relleno */
+
+    --tw-red-600: #dc2626;
+    --tw-red-500: #ef4444; /* Usando un color similar para el relleno */
+
+    --tw-yellow-600: #f59e0b;
+    --tw-yellow-500: #f59e0b; /* Usando un color similar para el relleno */
+
+    --tw-gray-700: #374151;
+    --tw-gray-500: #6b7280;
+    --tw-gray-300: #d1d5db;
+    --tw-gray-200: #e5e7eb;
+    --tw-gray-50: #f9fafb;
+
+    --tw-white: #ffffff;
+}
+
+
+/* Contenedor principal: bg-white rounded-lg shadow-lg p-6 max-w-xl mx-auto */
+.net-income-calculator-enhanced {
+    background-color: var(--tw-white);
+    border-radius: 0.5rem; /* rounded-lg (8px) */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    padding: 1.5rem; /* p-6 (24px) */
+    max-width: 36rem; /* max-w-xl (576px) */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto; /* mx-auto */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente consistente */
     box-sizing: border-box; /* Incluir padding en el ancho */
 }
 
-/* Título de la calculadora */
-.net-income-calculator-container h2 {
-    font-size: 2rem;
-    color: #212121;
-    margin-bottom: 2rem; /* Espacio debajo del título */
-    text-align: center; /* Centrar el título */
-    position: relative;
-    display: inline-block; /* Necesario para el subrayado centrado */
-    width: 100%; /* Ocupar el ancho completo para centrar pseudo-elemento */
+/* Encabezado: flex items-center justify-center mb-4 text-blue-600 */
+.calculator-header {
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    justify-content: center; /* justify-center */
+    margin-bottom: 1rem; /* mb-4 (16px) */
+    color: var(--tw-blue-600); /* text-blue-600 */
 }
 
-/* Subrayado para el título */
-.net-income-calculator-container h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px; /* Posición del subrayado */
-    left: 50%; /* Iniciar desde el centro */
-    transform: translateX(-50%); /* Mover hacia la izquierda la mitad de su ancho para centrarlo */
-    width: 80px; /* Ancho del subrayado */
-    height: 3px;
-    background: linear-gradient(to right, #00796b, #004d40); /* Gradiente similar */
-    border-radius: 2px;
+/* Icono en el encabezado: mr-2 */
+.calculator-header .header-icon {
+    margin-right: 0.5rem; /* mr-2 (8px) */
+    font-size: 1.5rem; /* Ajusta si es necesario para el tamaño del icono */
 }
 
-/* Contenedor de cada grupo de label/input */
-.net-income-calculator-container > div {
-    margin-bottom: 1.5rem; /* Espacio entre los grupos de input */
+/* Título en el encabezado: text-2xl font-bold */
+.net-income-calculator-enhanced h2 { /* Apuntando al h2 dentro del contenedor principal */
+    font-size: 1.5rem; /* text-2xl (24px) */
+    line-height: 2rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: inherit; /* Hereda el color del .calculator-header */
+    margin: 0; /* Eliminar margen por defecto del h2 */
 }
 
-/* Estilo para las etiquetas (labels) */
-.net-income-calculator-container label {
-    display: block; /* Cada label en su propia línea */
-    margin-bottom: 0.5rem; /* Espacio entre el label y el input */
-    font-weight: 600; /* Semi-negrita */
-    color: #333;
+
+/* Contenedor principal de la grilla: grid grid-cols-1 md:grid-cols-2 gap-6 */
+.calculator-content-grid {
+    display: grid; /* grid */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+    gap: 1.5rem; /* gap-6 (24px) */
+}
+
+@media (min-width: 768px) { /* md: */
+    .calculator-content-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+    }
+}
+
+
+/* Paneles (entrada y resultados): space-y-4 */
+/* Esto aplica margen superior a todos los hijos directos excepto el primero */
+.input-panel > * + *,
+.results-panel > * + * {
+    margin-top: 1rem; /* space-y-4 (16px) */
+}
+
+
+/* Grupos de entrada (label + input/select): space-y-2 */
+/* Esto aplica margen superior a los hijos directos (label, input/select, div.relative) excepto el primero */
+.input-group > * + * {
+    margin-top: 0.5rem; /* space-y-2 (8px) */
+}
+
+
+/* Etiqueta con icono: flex items-center font-medium text-gray-700 */
+.input-panel label { /* Apunta a la etiqueta dentro del panel de entrada */
+    display: flex; /* flex */
+    align-items: center; /* items-center */
+    font-weight: 500; /* font-medium */
+    color: var(--tw-gray-700); /* text-gray-700 */
+    font-size: 1rem; /* Tamaño de fuente por defecto */
+}
+
+/* Icono junto a la etiqueta: mr-1 */
+.label-with-icon .icon-green,
+.label-with-icon .icon-red,
+.label-with-icon .icon-yellow {
+    margin-right: 0.25rem; /* mr-1 (4px) */
+    font-size: 1.1rem; /* Ajusta si es necesario para el tamaño del icono */
+}
+
+/* Colores de texto para iconos */
+.icon-green { color: var(--tw-green-600); }
+.icon-red { color: var(--tw-red-600); }
+.icon-yellow { color: var(--tw-yellow-600); }
+
+
+/* Contenedor del input/select y símbolo: relative */
+.input-wrapper {
+    position: relative; /* relative */
+}
+
+/* Estilos base para Input y Select: w-full p-2 border border-gray-300 rounded */
+.styled-input { /* Clase añadida a input y select */
+    width: 100%; /* w-full */
+    padding: 0.5rem 1rem; /* p-2 (8px) - Añadido padding horizontal para espacio del símbolo */
+    border: 1px solid var(--tw-gray-300); /* border border-gray-300 */
+    border-radius: 0.25rem; /* rounded (4px) */
+    font-size: 1rem;
+    color: var(--tw-gray-700);
+    box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+    outline: none; /* Eliminar el outline por defecto */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transición para efectos de enfoque */
+}
+
+/* Estilos al enfocar Input y Select: focus:ring focus:ring-blue-200 focus:border-blue-500 */
+.styled-input:focus {
+    border-color: var(--tw-blue-500); /* focus:border-blue-500 */
+    /* Aproximación al focus:ring */
+    box-shadow: 0 0 0 0.25rem rgba(var(--tw-blue-200, 191 219 254), 0.5);
+}
+
+/* Estilo para input[type="number"] deshabilitado */
+.styled-input:disabled {
+    background-color: var(--tw-gray-200);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+/* Símbolo de moneda/porcentaje dentro del input: absolute right-3 top-2 text-gray-500 */
+.input-wrapper .currency-symbol {
+    position: absolute; /* absolute */
+    right: 0.75rem; /* right-3 (12px) */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajuste final para centrar */
+    color: var(--tw-gray-500); /* text-gray-500 */
+    /* Asegura que no interfiera con clics en el input */
+    pointer-events: none;
     font-size: 1rem;
 }
 
-/* Estilo para los campos de entrada de número */
-.net-income-calculator-container input[type="number"] {
-    width: 100%; /* Ocupar todo el ancho disponible */
-    padding: 0.75rem 1rem; /* Padding interno */
-    border: 1px solid #ccc; /* Borde suave */
-    border-radius: 5px; /* Bordes ligeramente redondeados */
-    box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+/* Contenedor del input de tasa personalizada: mt-2 relative */
+/* Ya se manejó el mt-2 con .input-group > * + *, solo asegurar la posición relative */
+.input-group .input-wrapper.mt-2 {
+    position: relative; /* relative */
+}
+
+/* Nota para impuesto calculado */
+.tax-calculated-note {
+    font-size: 0.875rem; /* text-sm */
+    color: var(--tw-gray-500);
+    margin-top: 0.5rem; /* Ajusta el margen superior si es necesario */
+    margin-bottom: 0;
+}
+
+
+/* Bloque de resumen: bg-blue-50 p-4 rounded-lg shadow-sm */
+.summary-block {
+    background-color: var(--tw-blue-50); /* bg-blue-50 */
+    padding: 1rem; /* p-4 (16px) */
+    border-radius: 0.5rem; /* rounded-lg (8px) */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+/* Título del resumen: text-lg font-semibold text-blue-800 mb-2 */
+.summary-block h3 {
+    font-size: 1.125rem; /* text-lg (18px) */
+    line-height: 1.75rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: var(--tw-blue-800); /* text-blue-800 */
+    margin-bottom: 0.5rem; /* mb-2 (8px) */
+    margin-top: 0; /* Eliminar margen por defecto del h3 */
+}
+
+/* Contenedor de las líneas del resumen: space-y-2 */
+.summary-lines > * + * {
+    margin-top: 0.5rem; /* space-y-2 (8px) */
+}
+
+/* Líneas del resumen: flex justify-between */
+.summary-line {
+    display: flex; /* flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* Alinear verticalmente */
     font-size: 1rem;
-    color: #555;
-    transition: border-color 0.3s ease; /* Transición suave para el borde */
-    outline: none; /* Eliminar el outline por defecto al enfocar */
+    color: var(--tw-gray-700); /* Color por defecto */
 }
 
-/* Estilo al enfocar los campos de entrada */
-.net-income-calculator-container input[type="number"]:focus {
-    border-color: #00796b; /* Color del borde al enfocar */
-    box-shadow: 0 0 5px rgba(0, 121, 107, 0.3); /* Sombra sutil al enfocar */
-}
+/* Colores de texto para líneas del resumen */
+.summary-line.text-red-600 { color: var(--tw-red-600); }
+.summary-line.text-yellow-600 { color: var(--tw-yellow-600); }
+.summary-line.text-green-600 { color: var(--tw-green-600); } /* Para el total */
 
-/* Estilo para el botón de calcular */
-.calculate-button {
-    display: block; /* Botón como bloque para centrarlo */
-    margin: 2rem auto 1.5rem auto; /* Espacio arriba y abajo, centrado */
-    padding: 0.8rem 2rem; /* Padding del botón */
-    background-color: #00796b; /* Color primario (teal) */
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 50px; /* Bordes muy redondeados (pastilla) */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Transición suave */
-    text-transform: uppercase; /* Opcional: texto en mayúsculas */
-    letter-spacing: 0.5px; /* Opcional: espacio entre letras */
-}
 
-.calculate-button:hover {
-    background-color: #004d40; /* Color más oscuro al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de levantar ligeramente */
-}
-
-.calculate-button:active {
-    transform: translateY(0); /* Eliminar efecto al hacer click */
+/* Línea total separadora: border-t border-gray-300 pt-2 mt-2 */
+.total-line {
+    border-top: 1px solid var(--tw-gray-300); /* border-t border-gray-300 */
+    padding-top: 0.5rem; /* pt-2 (8px) */
+    margin-top: 0.5rem; /* mt-2 (8px) */
+    display: flex; /* flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center;
+    font-size: 1.125rem; /* text-lg (18px) - Ajustado para que destaque */
+    font-weight: 700; /* font-bold */
+    color: var(--tw-green-600); /* text-green-600 */
 }
 
 
-/* Contenedor del resultado */
-.result-display {
-    margin-top: 2rem; /* Espacio arriba del resultado */
-    padding: 1.5rem; /* Padding interno */
-    background-color: #e0f7fa; /* Fondo suave (azul/verde claro) */
-    border-radius: 10px; /* Bordes redondeados */
-    border-left: 5px solid #00796b; /* Borde izquierdo de color */
-    text-align: center; /* Centrar el texto del resultado */
+/* Texto en negrita: font-bold */
+/* Ya aplicado en .total-line, pero si se necesita en otro lado */
+.font-bold {
+    font-weight: 700; /* font-bold */
 }
 
-/* Título del resultado */
-.result-display h3 {
-    font-size: 1.6rem;
-    color: #212121;
-    margin: 0; /* Eliminar margen por defecto */
-    font-weight: 700;
+/* Texto semi-negrita: font-semibold */
+/* Ya aplicado en títulos de bloque, pero si se necesita en otro lado */
+.font-semibold {
+    font-weight: 600; /* font-semibold */
 }
 
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .net-income-calculator-container {
-        margin: 2rem 1rem; /* Menos margen lateral en pantallas pequeñas */
-        padding: 1.5rem;
+
+/* Bloque de distribución: bg-gray-50 p-4 rounded-lg shadow-sm */
+.distribution-block {
+    background-color: var(--tw-gray-50); /* bg-gray-50 */
+    padding: 1rem; /* p-4 (16px) */
+    border-radius: 0.5rem; /* rounded-lg (8px) */
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+/* Título de distribución: text-lg font-semibold text-gray-700 mb-2 */
+.distribution-block h3 {
+    font-size: 1.125rem; /* text-lg (18px) */
+    line-height: 1.75rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: var(--tw-gray-700); /* text-gray-700 */
+    margin-bottom: 0.5rem; /* mb-2 (8px) */
+    margin-top: 0; /* Eliminar margen por defecto del h3 */
+}
+
+
+/* Contenedor de barras de progreso: space-y-3 mt-4 */
+/* space-y-3 */
+.progress-bars-container > * + * {
+    margin-top: 0.75rem; /* space-y-3 (12px) */
+}
+/* mt-4 */
+.progress-bars-container.mt-4 { /* Apuntando al contenedor si tiene mt-4 */
+    margin-top: 1rem; /* mt-4 (16px) */
+}
+
+
+/* Línea de etiquetas de barra de progreso: flex justify-between text-sm mb-1 */
+.progress-bar-labels {
+    display: flex; /* flex */
+    justify-content: space-between; /* justify-between */
+    align-items: center; /* Alinear verticalmente */
+    font-size: 0.875rem; /* text-sm (14px) */
+    line-height: 1.25rem; /* text-sm */
+    margin-bottom: 0.25rem; /* mb-1 (4px) */
+    color: var(--tw-gray-700); /* Color por defecto para el texto */
+}
+
+/* Colores de texto para etiquetas de barra de progreso */
+.progress-bar-labels .text-green-600 { color: var(--tw-green-600); }
+.progress-bar-labels .text-red-600 { color: var(--tw-red-600); }
+.progress-bar-labels .text-yellow-600 { color: var(--tw-yellow-600); }
+
+
+/* Pista de barra de progreso (fondo gris): w-full bg-gray-200 rounded-full h-4 */
+.progress-bar-track {
+    width: 100%; /* w-full */
+    background-color: var(--tw-gray-200); /* bg-gray-200 */
+    border-radius: 9999px; /* rounded-full */
+    height: 1rem; /* h-4 (16px) */
+    overflow: hidden; /* Esconde el relleno que pueda salirse */
+}
+
+/* Relleno de barra de progreso: h-4 rounded-full (el color y width están inline) */
+.progress-bar-fill { /* Clase añadida al div interior */
+    height: 1rem; /* h-4 (16px) */
+    border-radius: 9999px; /* rounded-full */
+    /* El background-color y width son aplicados directamente en el estilo inline del elemento en el JSX */
+    transition: width 0.3s ease; /* Añadir una transición para el cambio de ancho */
+}
+
+/* Clases de color para el relleno de la barra */
+.progress-bar-fill.bg-green-500 { background-color: var(--tw-green-500); }
+.progress-bar-fill.bg-red-500 { background-color: var(--tw-red-500); }
+.progress-bar-fill.bg-yellow-500 { background-color: var(--tw-yellow-500); }
+
+
+/* Texto del total de ingreso bruto bajo las barras: text-xs text-gray-500 mt-4 text-center */
+.total-gross-text {
+    font-size: 0.75rem; /* text-xs (12px) */
+    line-height: 1rem; /* text-xs */
+    color: var(--tw-gray-500); /* text-gray-500 */
+    margin-top: 1rem; /* mt-4 (16px) */
+    text-align: center; /* text-center */
+}
+
+/* Responsive adjustments (ejemplo basado en los breakpoints de md) */
+@media (max-width: 767px) { /* Menor que md */
+    .net-income-calculator-enhanced {
+        padding: 1.2rem; /* Reducir padding en pantallas pequeñas */
     }
 
-    .net-income-calculator-container h2 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
+    .calculator-header {
+        margin-bottom: 0.8rem;
     }
 
-    .net-income-calculator-container h2::after {
-        width: 60px;
-        bottom: -8px;
+    .net-income-calculator-enhanced h2 {
+        font-size: 1.3rem;
     }
 
-    .net-income-calculator-container > div {
-        margin-bottom: 1rem;
+    .calculator-content-grid {
+        gap: 1rem; /* Reducir espacio entre paneles */
     }
 
-    .net-income-calculator-container label,
-    .net-income-calculator-container input[type="number"],
-    .calculate-button,
-    .result-display h3 {
-        font-size: 1rem; /* Ajustar tamaño de fuente general */
+    .input-panel > * + *,
+    .results-panel > * + * {
+        margin-top: 0.8rem; /* Reducir space-y-4 */
     }
 
-    .calculate-button {
-        padding: 0.6rem 1.5rem;
+    .input-group > * + * {
+        margin-top: 0.4rem; /* Reducir space-y-2 */
     }
 
-    .result-display {
-        padding: 1rem;
-        margin-top: 1.5rem;
+    .styled-input {
+        padding: 0.4rem 0.8rem; /* Reducir padding de inputs */
+    }
+
+    .input-wrapper .currency-symbol {
+        right: 0.5rem;
+    }
+
+    .summary-block h3,
+    .distribution-block h3 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .summary-lines > * + * {
+        margin-top: 0.4rem;
+    }
+
+    .summary-line {
+        font-size: 0.9rem;
+    }
+
+    .total-line {
+        font-size: 1rem;
+    }
+
+    .progress-bars-container > * + * {
+        margin-top: 0.6rem; /* Reducir space-y-3 */
+    }
+
+    .progress-bars-container.mt-4 {
+        margin-top: 0.8rem; /* Reducir mt-4 */
+    }
+
+    .progress-bar-labels {
+        font-size: 0.8rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .progress-bar-track,
+    .progress-bar-fill {
+        height: 0.8rem; /* Reducir altura de barras */
+    }
+
+    .total-gross-text {
+        font-size: 0.7rem;
+        margin-top: 0.8rem;
     }
 }
