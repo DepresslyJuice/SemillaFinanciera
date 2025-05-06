@@ -46,25 +46,26 @@ const NetIncomeCalculator: React.FC = () => {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
+        const parsedValue = parseFloat(value) || 0;
 
         setState((prevState) => {
-            // Crea una copia del estado para modificarla
             const newState = { ...prevState };
 
-            // Asigna el nuevo valor
-            newState[name as keyof CalculatorState] = parseFloat(value) || 0;
+            if (name === 'grossIncome') newState.grossIncome = parsedValue;
+            else if (name === 'taxRate') newState.taxRate = parsedValue;
+            else if (name === 'taxes') newState.taxes = parsedValue;
+            else if (name === 'deductions') newState.deductions = parsedValue;
 
-            // Si cambió el ingreso bruto o la tasa de impuestos, recalcula los impuestos
             if (name === 'grossIncome' || name === 'taxRate') {
                 newState.taxes = (newState.grossIncome * newState.taxRate) / 100;
             }
 
-            // Recalcula el ingreso neto
             newState.netIncome = newState.grossIncome - newState.taxes - newState.deductions;
 
             return newState;
         });
     };
+
 
     const handleTaxRateChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = e.target.value;
@@ -110,7 +111,6 @@ const NetIncomeCalculator: React.FC = () => {
                 <h2>Calculadora de Ingreso Neto</h2>
             </div>
 
-            {/* Añade una clase al contenedor de la grilla principal */}
             <div className="calculator-content-grid">
                 {/* Panel de entrada */}
                 <div className="input-panel"> {/* Añade una clase para el panel */}
@@ -196,7 +196,9 @@ const NetIncomeCalculator: React.FC = () => {
                             <span className="currency-symbol">€</span> {/* Clase para el símbolo */}
                         </div>
                         {!state.customTaxRate && state.taxRate > 0 && (
-                            <p className="tax-calculated-note">Monto calculado automáticamente: {formatCurrency(state.taxAmount)}</p>
+                            <p className="tax-calculated-note">
+                                Monto calculado automáticamente: {formatCurrency(state.taxes)}
+                            </p>
                         )}
                     </div>
 
@@ -238,7 +240,7 @@ const NetIncomeCalculator: React.FC = () => {
                             {/* Usa taxAmount para mostrar el monto de impuestos, sea calculado o manual */}
                             <div className="summary-line text-red-600"> {/* flex justify-between text-red-600 */}
                                 <span>Impuestos ({state.customTaxRate ? 'Manual' : `${state.taxRate}%`}):</span> {/* Ajusta el texto según si es manual o tasa */}
-                                <span className="font-semibold">- {formatCurrency(state.taxAmount)}</span>
+                                <span className="font-semibold">- {formatCurrency(state.taxes)}</span>
                             </div>
                             <div className="summary-line text-yellow-600"> {/* flex justify-between text-yellow-600 */}
                                 <span>Deducciones:</span>
