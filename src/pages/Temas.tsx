@@ -32,7 +32,7 @@ function Temas() {
                     <div className="tema-item">
                         <div className="tema-icon">💹</div>
                         <div className="tema-content">
-                            <h3>Tipos de ahorro</h3>
+                            <h3>Metodos de ahorro</h3>
                             <p>Explora los diferentes tipos de ahorro y cuál es el más adecuado para ti.</p>
                             <ul className="tema-benefits">
                                 <li>Ahorro tradicional</li>

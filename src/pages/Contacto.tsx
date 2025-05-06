@@ -33,7 +33,7 @@ function Contacto() {
                         <div className="institucion-text">
                             <h2>Sobre la Institución</h2>
                             <p>
-                                Este proyecto fue desarrollado por estudiantes del curso <strong>"{nombreCurso}"</strong> como parte de las actividades académicas en la:
+                                Este proyecto fue desarrollado por estudiantes del curso <strong>"{nombreCurso}"</strong> como parte de las actividades académicas en la institución:
                             </p>
                             <p>
                                 <strong>{institucion.nombre}</strong>

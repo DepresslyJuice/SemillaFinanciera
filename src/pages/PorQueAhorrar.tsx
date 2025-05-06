@@ -63,7 +63,7 @@ function PorQueAhorrar() {
                         <h3>Jerarquización de Gastos</h3>
                         <div className="myth-reality">
                             <p className="point"><strong>Primero lo esencial:</strong> Prioriza necesidades básicas como alimentación, vivienda, salud, educación básica y servicios públicos. Son gastos que no puedes dejar de cubrir sin afectar tu calidad de vida.</p>
-                            <p className="reality"><strong>Consejo:</strong> Asegúrate de que estos gastos no superen el 50% de tus ingresos mensuales, si es posible. Si lo hacen, considera ajustes o apoyos.</p>
+                            <p className="reality"><strong>Consejo:</strong> Asegúrate de que estos gastos no superen el 50% de tus ingresos mensuales. Si lo hacen, considera ajustes o apoyos.</p>
                         </div>
                         <div className="myth-reality">
                             <p className="point"><strong>Luego lo importante:</strong> Incluye aquí el ahorro para emergencias, inversiones, educación complementaria y el pago de deudas. Aunque no son urgentes, son clave para tu seguridad financiera a futuro.</p>
@@ -77,16 +77,16 @@ function PorQueAhorrar() {
                     <div className="por-que-ahorrar-card">
                         <h3>Diferencia entre deseo y necesidad</h3>
                         <div className="myth-reality">
-                            <p className="point"><strong>Necesidad:</strong> Pagar la renta o hipoteca de tu vivienda.</p>
-                            <p className="reality"><strong>Otro Ejemplo:</strong> Comprar alimentos básicos para la semana.</p>
+                            <p className="point"><strong>Necesidad:</strong> Pagar la renta o hipoteca de tu vivienda, comprar alimentos, o costear servicios básicos como electricidad y agua.</p>
                         </div>
                         <div className="myth-reality">
-                            <p className="point"><strong>Deseo:</strong> Ir a un concierto o evento recreativo.</p>
-                            <p className="reality"><strong>Otro Ejemplo:</strong> Comprar ropa de marca aunque ya tienes suficiente ropa funcional.</p>
+                            <p className="point"><strong>Deseo:</strong> Ir a un concierto o evento recreativo, comprar el último modelo de celular o ropa de marca sin que sea estrictamente necesario.</p>
                         </div>
                         <div className="myth-reality">
-                            <p className="point"><strong>Importancia:</strong> Saber distinguir entre necesidad y deseo te permite tomar decisiones financieras más responsables.</p>
-                            <p className="reality"><strong>Consejo:</strong> Antes de gastar, pregúntate: “¿Esto es algo que realmente necesito o simplemente quiero en este momento?”</p>
+                            <p className="point"><strong>Importancia:</strong> Saber distinguir entre necesidad y deseo te permite tomar decisiones financieras más responsables, priorizar tus recursos y evitar gastos impulsivos que afecten tu estabilidad económica.</p>
+                        </div>
+                        <div className="myth-reality">
+                            <p className="point"><strong>Consejo:</strong> Antes de comprar algo, pregúntate si es algo que necesitas para vivir o si solo lo quieres por gusto. Esta reflexión puede ayudarte a ahorrar a largo plazo.</p>
                         </div>
                     </div>
 
@@ -117,7 +117,7 @@ function PorQueAhorrar() {
 
                     <div className="por-que-ahorrar-cta">
                         <Link to="/temas/metodos" className="por-que-ahorrar-link">
-                            Descubre métodos de ahorro <i className="fas fa-arrow-right arrow"></i>
+                            Descubre métodos de ahorro
                         </Link>
                     </div>
                 </div>
