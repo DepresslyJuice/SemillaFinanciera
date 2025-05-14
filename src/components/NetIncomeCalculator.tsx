@@ -29,7 +29,7 @@ const NetIncomeCalculator: React.FC = () => {
     const formatCurrency = (value: number): string => {
         return new Intl.NumberFormat('es-ES', {
             style: 'currency',
-            currency: 'EUR',
+            currency: 'USD',
             minimumFractionDigits: 2
         }).format(value);
     };
@@ -132,7 +132,7 @@ const NetIncomeCalculator: React.FC = () => {
                                 min="0"
                                 className="styled-input" // Añade una clase base para inputs
                             />
-                            <span className="currency-symbol">€</span> {/* Clase para el símbolo */}
+                            <span className="currency-symbol">$</span> {/* Clase para el símbolo */}
                         </div>
                     </div>
 
@@ -193,7 +193,7 @@ const NetIncomeCalculator: React.FC = () => {
                                 className="styled-input"
                                 disabled={!state.customTaxRate} // Deshabilita si no es tasa personalizada
                             />
-                            <span className="currency-symbol">€</span> {/* Clase para el símbolo */}
+                            <span className="currency-symbol">$</span> {/* Clase para el símbolo */}
                         </div>
                         {!state.customTaxRate && state.taxRate > 0 && (
                             <p className="tax-calculated-note">
@@ -221,7 +221,7 @@ const NetIncomeCalculator: React.FC = () => {
                                 min="0"
                                 className="styled-input"
                             />
-                            <span className="currency-symbol">€</span> {/* Clase para el símbolo */}
+                            <span className="currency-symbol">$</span> {/* Clase para el símbolo */}
                         </div>
                     </div>
                 </div>
