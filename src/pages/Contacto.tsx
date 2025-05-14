@@ -1,4 +1,4 @@
-import Tarjeta from '../assets/Tarjeta.svg';
+import Tarjeta from '../assets/institucion.jpeg';
 import '../css/Contacto.css'; // Importamos el archivo CSS
 
 // Placeholder simple para el logo (podrías usar un <img src="..." /> real si tuvieras la imagen)
