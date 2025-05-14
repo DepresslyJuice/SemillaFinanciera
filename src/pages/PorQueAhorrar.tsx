@@ -60,21 +60,6 @@ function PorQueAhorrar() {
                         </div>
                     </div>
                     <div className="por-que-ahorrar-card">
-                        <h3>Jerarquización de Gastos</h3>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Primero lo esencial:</strong> Prioriza necesidades básicas como alimentación, vivienda, salud, educación básica y servicios públicos. Son gastos que no puedes dejar de cubrir sin afectar tu calidad de vida.</p>
-                            <p className="reality"><strong>Consejo:</strong> Asegúrate de que estos gastos no superen el 50% de tus ingresos mensuales. Si lo hacen, considera ajustes o apoyos.</p>
-                        </div>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Luego lo importante:</strong> Incluye aquí el ahorro para emergencias, inversiones, educación complementaria y el pago de deudas. Aunque no son urgentes, son clave para tu seguridad financiera a futuro.</p>
-                            <p className="reality"><strong>Consejo:</strong> Intenta destinar al menos un 20% de tus ingresos a esta categoría. Automatizar este ahorro puede ayudarte a mantener la constancia.</p>
-                        </div>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Por último lo deseado:</strong> Compras por gusto, entretenimiento, salidas, suscripciones o lujos personales. No son imprescindibles, pero sí importantes para mantener el equilibrio emocional.</p>
-                            <p className="reality"><strong>Consejo:</strong> Si tu presupuesto lo permite, destina un 30% a esta área, pero sin comprometer lo esencial o el ahorro. Gastar con conciencia también es parte del bienestar financiero.</p>
-                        </div>
-                    </div>
-                    <div className="por-que-ahorrar-card">
                         <h3>Diferencia entre deseo y necesidad</h3>
                         <div className="myth-reality">
                             <p className="point"><strong>Necesidad:</strong> Pagar la renta o hipoteca de tu vivienda, comprar alimentos, o costear servicios básicos como electricidad y agua.</p>

@@ -4,7 +4,7 @@ function Footer() {
     return (
         <footer className="site-footer">
             <p>© 2025 Cultura del Ahorro | Proyecto Escolar</p>
-            <p>Desarrollado por: DepresslyJuice github</p>
+            <p>Desarrollado por: Estudiantes unidad educativa mitad del mundo</p>
         </footer>
     );
 }
