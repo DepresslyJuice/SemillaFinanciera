@@ -95,17 +95,6 @@ function GastosDeseos() {
                         </ul>
                     </div>
 
-                    <div className="distinction-block">
-                        <h4>¿Por qué es Crucial Distinguir?</h4>
-                        <p>Distinguir entre deseos y necesidades te permite:</p>
-                        <ul>
-                            <li>Tomar decisiones de gasto más racionales y menos emocionales.</li>
-                            <li>Identificar dónde puedes recortar gastos cuando sea necesario.</li>
-                            <li>Evitar la acumulación de deuda innecesaria.</li>
-                            <li>Liberar recursos para tus metas financieras importantes (ahorro, inversión, pago de deudas).</li>
-                        </ul>
-                    </div>
-
                 </div> {/* Fin Tarjeta 2 */}
 
                 <div className="calculadora-container"> {/* Contenedor de la Calculadora */}
