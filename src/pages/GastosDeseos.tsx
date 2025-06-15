@@ -69,7 +69,7 @@ function GastosDeseos() {
 
                 </div> {/* Fin Tarjeta 1 */}
 
-                <div className="gastos-card"> {/* Tarjeta 2: Deseo vs Necesidad */}
+                <div className="gastos-card">
                     <h3>Diferencia entre Deseo y Necesidad</h3>
                     <p>Comprender esta distinción es fundamental para tomar decisiones financieras conscientes y priorizar dónde va tu dinero.</p>
 
