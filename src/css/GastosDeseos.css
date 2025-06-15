@@ -1,6 +1,13 @@
 /* GastosDeseos.css */
 
 /* Contenedor principal con fondo (similar a las otras vistas) */
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    object-fit: cover;      /* Evita la distorsión recortando la imagen */
+}
+
 .gastos-container {
     margin-top: 100px; /* Ajusta según necesites para el header */
     padding: 3rem 1rem;

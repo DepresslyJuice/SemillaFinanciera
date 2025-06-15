@@ -59,22 +59,6 @@ function PorQueAhorrar() {
                             <p className="reality"><strong>Realidad:</strong> "Ahorrar es un hábito que se puede construir con constancia, no tiene que ser complicado."</p>
                         </div>
                     </div>
-                    <div className="por-que-ahorrar-card">
-                        <h3>Diferencia entre deseo y necesidad</h3>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Necesidad:</strong> Pagar la renta o hipoteca de tu vivienda, comprar alimentos, o costear servicios básicos como electricidad y agua.</p>
-                        </div>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Deseo:</strong> Ir a un concierto o evento recreativo, comprar el último modelo de celular o ropa de marca sin que sea estrictamente necesario.</p>
-                        </div>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Importancia:</strong> Saber distinguir entre necesidad y deseo te permite tomar decisiones financieras más responsables, priorizar tus recursos y evitar gastos impulsivos que afecten tu estabilidad económica.</p>
-                        </div>
-                        <div className="myth-reality">
-                            <p className="point"><strong>Consejo:</strong> Antes de comprar algo, pregúntate si es algo que necesitas para vivir o si solo lo quieres por gusto. Esta reflexión puede ayudarte a ahorrar a largo plazo.</p>
-                        </div>
-                    </div>
-
                     <div className="por-que-ahorrar-quote">
                         <blockquote>
                             "No importa cuánto ganes, sino cuánto logras ahorrar para hacer realidad tus sueños."
